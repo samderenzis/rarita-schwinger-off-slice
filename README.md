@@ -14,7 +14,7 @@ This repository asks the next question in that project's [ROADMAP](https://githu
 
 > **Off the Pauli slice (q ≠ λ√(2/3)·m), near the witness: do nearby characteristic crossings exist, and does the constrained symbol (P restricted to ker L) have a nontrivial Jordan chain at any of them?**
 
-The working plan is in [PLAN.md](PLAN.md).
+The working plan is in [PLAN.md](PLAN.md). Before any work, read [CONVENTIONS.md](CONVENTIONS.md), which covers sign conventions and the traps inherited from the parent code. Outcomes are reported with [RESULT_TEMPLATE.md](RESULT_TEMPLATE.md). Terms are explained in [GLOSSARY.md](GLOSSARY.md).
 
 ## Status
 Planning. No computations have been run here yet.
