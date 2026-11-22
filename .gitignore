@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+*.log
+*.aux
+*.out
+*.blg
+*.bbl
+*.synctex.gz
+.DS_Store
+Thumbs.db
