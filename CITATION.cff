@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use or discuss this work, please cite it as below."
+title: "rarita-schwinger-off-slice: exploratory off-slice continuation of a Jordan-block obstruction for charged Rarita-Schwinger fields"
+authors:
+  - family-names: "DeRenzis"
+    given-names: "Sam"
+    email: "waitandhope123@gmail.com"
+type: software
+repository-code: "https://github.com/samderenzis/rarita-schwinger-off-slice"
+license: MIT
+version: "0.0.1"
+keywords:
+  - mathematical physics
+  - Rarita-Schwinger
+  - spin-3/2
+  - well-posedness
+  - Jordan block
+  - exact arithmetic
+abstract: "Exploratory follow-up to rarita-schwinger-well-posedness (release v1.0.9, paper version 2): does the constrained Jordan-block obstruction persist off the Pauli slice (charge varied independently) near the published witness? No results yet. AI-collaborative; not peer reviewed."
+references:
+  - type: software
+    title: "rarita-schwinger-well-posedness"
+    authors:
+      - family-names: "DeRenzis"
+        given-names: "Sam"
+    doi: "10.5281/zenodo.24413648"
+    repository-code: "https://github.com/samderenzis/rarita-schwinger-well-posedness"
+    version: "1.0.9"
