@@ -1,6 +1,6 @@
 # Plan: is the witness isolated?
 
-This plan follows the parent project's [ROADMAP §2](https://github.com/samderenzis/rarita-schwinger-well-posedness/blob/main/ROADMAP.md#2-is-the-witness-isolated). If the two ever disagree, the ROADMAP is the reference until this file is updated and the change is logged in CHANGELOG.md.
+This plan follows the parent project's [ROADMAP §2](https://github.com/samderenzis/rarita-schwinger-well-posedness/blob/main/ROADMAP.md#2-is-the-witness-isolated-or-part-of-a-family). If the two ever disagree, the ROADMAP is the reference until this file is updated and the change is logged in CHANGELOG.md.
 
 ## Background that must not be assumed
 - On the Pauli slice, the parent records report defect 2 at every crossing on 27 tested slices.

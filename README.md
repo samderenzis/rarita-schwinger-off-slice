@@ -10,7 +10,7 @@ This is a follow-up to [rarita-schwinger-well-posedness](https://github.com/samd
 
 That paper proves a local obstruction to loss-free L² well-posedness for a charged, Pauli-coupled massive Rarita–Schwinger field. The proof is at one exact parameter point on the **Pauli slice**, where the charge is q = λ√(2/3)·m.
 
-This repository asks the next question in that project's [ROADMAP](https://github.com/samderenzis/rarita-schwinger-well-posedness/blob/main/ROADMAP.md#2-is-the-witness-isolated), §2:
+This repository asks the next question in that project's [ROADMAP](https://github.com/samderenzis/rarita-schwinger-well-posedness/blob/main/ROADMAP.md#2-is-the-witness-isolated-or-part-of-a-family), §2:
 
 > **Off the Pauli slice (q ≠ λ√(2/3)·m), near the witness: do nearby characteristic crossings exist, and does the constrained symbol (P restricted to ker L) have a nontrivial Jordan chain at any of them?**
 
