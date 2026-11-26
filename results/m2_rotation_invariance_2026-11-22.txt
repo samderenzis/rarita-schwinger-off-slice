@@ -1,0 +1,19 @@
+Milestone 2 input -- rotation equivariance of P and L
+date (UTC): 2026-11-22 20:07:15
+python 3.13.18 | sympy 1.14.0
+command: python3 -I scripts/m2_rotation_invariance.py
+   76cdd39e6b7ef4cb71390e6b0303e6e008b55f0f206a1c39de3e3bd2ca2310aa  scripts/rs_model.py
+   6533e699c5dbab44cb59d15befdb2ec0a031a0de3276075c0d4a1582f7a8d119  scripts/m2_rotation_invariance.py
+   OK   rotation in the (1,2) plane: S S^-1 = 1: True  [4.5 s]
+   OK   rotation in the (1,2) plane: S Gamma^a S^-1 = R^a_b Gamma^b, S Gamma^0 S^-1 = Gamma^0: True  [4.5 s]
+   OK   rotation in the (1,2) plane: Shat Shat^-1 = 1: True  [4.5 s]
+   OK   rotation in the (1,2) plane: R^T R = 1 (R a rotation): True  [4.5 s]
+   OK   rotation in the (1,2) plane: L(R^T xi) Shat == S L(xi): True  [4.5 s]
+   OK   rotation in the (1,2) plane: P(R^T xi) Shat == Shat P(xi): True  [4.5 s]
+   OK   rotation in the (3,4) plane: S S^-1 = 1: True  [8.2 s]
+   OK   rotation in the (3,4) plane: S Gamma^a S^-1 = R^a_b Gamma^b, S Gamma^0 S^-1 = Gamma^0: True  [8.2 s]
+   OK   rotation in the (3,4) plane: Shat Shat^-1 = 1: True  [8.2 s]
+   OK   rotation in the (3,4) plane: R^T R = 1 (R a rotation): True  [8.2 s]
+   OK   rotation in the (3,4) plane: L(R^T xi) Shat == S L(xi): True  [8.2 s]
+   OK   rotation in the (3,4) plane: P(R^T xi) Shat == Shat P(xi): True  [8.2 s]
+ROTATION EQUIVARIANCE: ALL PASS

@@ -1,0 +1,44 @@
+PLAN steps 3-4 -- off-slice dispersion relation and crossings near the witness
+date (UTC): 2026-11-22 19:39:09
+python 3.13.18 | sympy 1.14.0 | mpmath 1.3.0
+command: python3 -I scripts/step4_dispersion_and_crossings.py
+   76cdd39e6b7ef4cb71390e6b0303e6e008b55f0f206a1c39de3e3bd2ca2310aa  scripts/rs_model.py
+   1b78d24305758c2a020bfaed35b032643a485ff961d91bf3e1b811ae2399dc2b  scripts/points.py
+   125e03c096b89e32f720fe5c16e2d35625dc594a28ac8aef2eb073a11f208438  scripts/step4_dispersion_and_crossings.py
+A. EXACT: dependence on q
+   P(s,0,1,0) with q = q_slice + eta/35736 has no radical (entries in Q(i)(s, eta)): True
+B. EXACT: characteristic polynomial of P on ker L(xi), xi = (s, 0, 1, 0), symbolic eps
+   P ker L subset ker L (P K = K A exactly): True
+   no radical, no i in the numerator: True
+   light-branch factor (x^2 - s^2 - 1) with multiplicity 4: True
+   Q(x, s, eps) = 6006881399236*epsilon**4*s**4 + 96110102387776*epsilon**4*s**2*x**2 + 108123865186248*epsilon**4*s**2 + 384440409551104*epsilon**4*x**4 - 864990921489984*epsilon**4*x**2 + 486557393338116*epsilon**4 - 1712456700924028*epsilon**2*s**4 + 2147323421221172*epsilon**2*s**2*x**2 - 24272215765918552*epsilon**2*s**2 - 69283624677263896*epsilon**2*x**4 + 148522360557144340*epsilon**2*x**2 - 79740949118420700*epsilon**2 + 122047854686817361*s**4 - 1222980071507665250*s**2*x**2 + 1262930458698116450*s**2 + 3063716808343140625*x**4 - 6327594969412681250*x**2 + 3267147439011300625
+   denominator: (9803576*epsilon**2 - 763140625)*(39214304*epsilon**2 - 4014616321)
+   Q even in eps: True
+   Q at eps = 0: (-349353481*s**2 + 1750347625*x**2 - 1807525225)**2   (the parent double G-sheet)
+   (8.6 s)
+C. EXACT: crossings x^2 = |xi|^2 = 1 + s^2 of the light branch with the Q-sheets
+   C(u, eps) coefficients in u: [718347204*(677329*epsilon**4 - 95843288*epsilon**2 + 2732361984), 159632712*(677329*epsilon**4 - 76236136*epsilon**2 - 1003622400), 8868484*(677329*epsilon**4 - 56628984*epsilon**2 + 368640000)]
+   C(u, 0) = 20432987136*(9801*u - 400)**2   (double root u* = 400/9801, s* = 20/99)
+   discriminant in u: -95227628033791228445188816896*epsilon**2*(823*epsilon**2 - 91809)
+   -> two distinct real roots u for 0 < eps^2 < 91809/823 (~ 10.56^2); split ~ linear in eps
+   as a quadratic in v = eps^2: discriminant 137068253777371175093726208*(u + 1)*(9*u + 1)**2*(82875*u + 1267)
+   (8.6 s)
+D. EXPLORATION (60-digit numerics; not a result): Jordan structure at the crossings
+   eps = 1/10: s = 0.196150129977779531, r = 1.01905587358608547: numerical dim ker (A - r)^j, j = 1..3: [4, 5, 5]  (|PK - KA| = 6.8e-61)
+   eps = 1/10: s = 0.20794256151265269, r = 1.02139126141182711: numerical dim ker (A - r)^j, j = 1..3: [4, 5, 5]  (|PK - KA| = 7.4e-61)
+   eps = 1/100: s = 0.201430944967165445, r = 1.0200854991569899: numerical dim ker (A - r)^j, j = 1..3: [4, 5, 5]  (|PK - KA| = 8.9e-61)
+   eps = 1/100: s = 0.202609981988226382, r = 1.02031897208729262: numerical dim ker (A - r)^j, j = 1..3: [4, 5, 5]  (|PK - KA| = 1.1e-60)
+   eps = 0: s = 0.20202020202020202, r = 1.0202020202020202: numerical dim ker (A - r)^j, j = 1..3: [4, 6, 6]  (|PK - KA| = 5.1e-61)
+   (10.9 s)
+E. EXACT search for a point with rational eps^2, covector and eigenvalue (reproduces point A)
+   conic w^2 = 4467 (u+1)(82875u+1267) through (u*, 15189289/3267); 4467 = square-free part of 2^10 3^3 823^2 1489^5
+   tangent slope at u*: 43671; second intersections for slopes m = 43671 + k/den, den < 10, |k| <= 60
+   u = 13484820232/330742630449, eps^2 = 81608/27765334551 (eps ~ 0.0017144109)
+   u = 209130900577/5126835120264, eps^2 = 326432/430446823711 (eps ~ 0.00087083647)
+   u = 426978392845/10460177192916, eps^2 = 81608/878393760583 (eps ~ 0.00030480476)
+   u = 346236095605/8466902032644, eps^2 = 8160800/711352222447 (eps ~ 0.0033870688)
+   u = 4371629310976/107121802001049, eps^2 = 81608/8994993011959 (eps ~ 0.000095250212)
+   point A (points.py; lower crossing) is candidate number 1 by size; U < u*
+   point B (points.py; upper crossing) is candidate number 3 by size; U > u*
+   (11.5 s)
+Scope: B, C, E are exact; D is exploration only. The points are checked independently in step 5.

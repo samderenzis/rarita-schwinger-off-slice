@@ -1,0 +1,10 @@
+Ray dispersion relation, full 16 x 16 characteristic polynomial (SymPy)
+date (UTC): 2026-11-22 21:07:51
+python 3.13.18 | sympy 1.14.0
+command: python3 -I scripts/m2_dispersion_export.py
+   76cdd39e6b7ef4cb71390e6b0303e6e008b55f0f206a1c39de3e3bd2ca2310aa  scripts/rs_model.py
+   b2735bcf0c0217bdead1fda91a898be2e7f65631487a7a3656d05366f184908c  scripts/m2_dispersion_export.py
+   lc_x(Q) = (9803576*epsilon**2 - 763140625)*(39214304*epsilon**2 - 4014616321)
+   OK   charpoly(P|ker L) == (x^2-s^2-1)^4 Q/lc_x(Q): True  [8.6 s]
+   wrote data/m2_dispersion.json  sha256 baed27fde993d25c72e042211629cf51e2b17222df19e7193f2d3d2bd3fbfe7a
+DISPERSION EXPORT: PASS

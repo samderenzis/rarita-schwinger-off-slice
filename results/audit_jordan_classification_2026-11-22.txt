@@ -1,0 +1,29 @@
+Exact Jordan classification at the certified crossings
+date (UTC): 2026-11-22 21:54:07
+python 3.13.18 | sympy 1.14.0
+   6cea97cd124666a32d69f2f3e356bcb175d755519cf171afd9f41cbb17d0f6a2  audit/jordan_classification.py
+   baed27fde993d25c72e042211629cf51e2b17222df19e7193f2d3d2bd3fbfe7a  data/m2_dispersion.json
+   OK   Q is a polynomial in X = x^2: True
+   OK   Q is a polynomial in u = s^2 and v = eps^2: True
+   disc_X Q = 3129942848356224*v*(1505082828387609*u**2*v**2 - 308742172331399406*u**2*v + 15833302855170673401*u**2 - 106243941256064*u*v**3 + 29433094452389802*u*v**2 - 2701808172929830092*u*v + 82110068353741789450*u + 167231425376401*v**2 - 25636961110035550*v + 982551236225700625)
+   C(u, v) = 8868484*(54863649*u**2*v**2 - 7763306328*u**2*v + 221321320704*u**2 + 12191922*u*v**2 - 1372250448*u*v - 18065203200*u + 677329*v**2 - 56628984*v + 368640000)
+   OK   Res_u(disc, C) == const * v^2 * p5(v)^2: True
+   OK   p5 irreducible over Q (SymPy): True
+   OK       certificate: content 1, LC = 823^5 not divisible by 11, and p5 mod 11 is irreducible of degree 5: True
+   isolating intervals of the real roots of p5: [('32', '33'), ('54', '55'), ('76', '77'), ('102', '103'), ('108', '109')]
+   OK   no root of p5 in (0, (2.66)^2]: True
+   OK   exactly one root v0 of p5 below (6.28)^2, with isolating interval inside ((2.66)^2, (6.28)^2): True
+   v0 in [187607633/5809776, 11905019/368671]  (eps0 ~ 5.68257999307)
+   OK   upper crossing u_+(v) in [17/10, 19/10] for all v in I0 (one root at va, none above, none on the sides): True
+   OK   on I0 the only other real root of C(., v) is the continued lower branch, in [-2/100, -1/100] (u < 0: no real covector): True
+   OK   disc_X Q has no zero on [17/10, 19/10] x I0 (enclosure [3.41924E+36, 9.52730E+36] excludes 0): True
+   OK   no root of p5 in (0, eps_L^2] and the only root in (0, eps_U^2] is v0 (eps_L^2 < 32 <= v0 interval; eps_U^2 < 54 <= next root): True
+   -> disc_X Q != 0 at every crossing with 0 < v <= eps_L^2 (lower) or 0 < v <= eps_U^2 (upper), endpoints included.
+   -> algebraic multiplicity of r on ker L is exactly 5 there; with geometric multiplicity 4: J2 + 3 J1.
+Exploratory context (outside the certified ranges): common real zeros of disc and C
+   eps ~ 5.682579993: crossing roots u [-0.015049302, 1.7989579]; common with disc [-0.015049302]  (u < 0: no real covector)
+   eps ~ 7.381564149: crossing roots u [-1.4472837, -0.012573469]; common with disc [-1.4472837]  (u < 0: no real covector)
+   eps ~ 8.734668525: crossing roots u [-1.0031124, -0.00017789497]; common with disc [-0.00017789497]  (u < 0: no real covector)
+   eps ~ 10.13298380: crossing roots u [0.055970830, 11.588280]; common with disc [11.588280]  (real covector: triple crossing)
+   eps ~ 10.39691791: crossing roots u [0.099983607, 0.93165822]; common with disc [0.93165822]  (real covector: triple crossing)
+JORDAN CLASSIFICATION (exact): ALL PASS

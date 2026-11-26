@@ -1,0 +1,32 @@
+Independent fractions-only verification of off-slice point A- (no SymPy)
+python 3.13.18 | engine: fractions.Fraction + own arithmetic in Q(i, sqrt(DELTA))
+input: point_Am_chain.json  sha256 a9f1c12da5eae7ae36c39016e0a1a9d85d6d49c7286a1e017b293db59126aa8a
+script sha256 7aede38009faeafb08693bcf0a034d1b2e6c62302bab901905a9a047e9a932a7
+point A-: lower crossing, sign of eps -1, eps^2 = 81608/27765334551, DELTA = 50234001393
+1. Clifford algebra
+   OK   {G^A, G^B} = 2 eta^{AB}: True
+2. S^rho in K: the irrational mu = m*lam*c1 cancels against q_slice
+   OK   (16/3)^2 * 823*3/(142944*256) == q_slice^2 = lam^2 (2/3) m^2: True
+   OK   S_mu - (16/3) i S_q == 0 for every rho (so S^rho has entries in K): True
+3. det S^0, constraint symbol
+   OK   det S^0 = 3487022434026159284898717563348497/150353979681895762264745351190810624 (+ 0 i + (0 + 0 i) s), equal to the recorded value and != 0: True
+   OK   L L^dag == 3|xi|^2 I: True
+   OK   |xi|^2 == R^2: True
+4a. Engine regression: the same code with ETA = 0 (Pauli slice) reproduces the parent witness
+   OK   det S^0 on the slice == 3063716808343140625/132101812606622109696 (parent value): True
+   OK   parent chain: L v = L w = 0, (P-r) v = 0, (P-r) w = v (P built by this script): True
+4b. Symbol and chain at the point
+   OK   det M != 0: True
+   OK   L v == 0: True
+   OK   L w == 0: True
+   OK   (P - R) v == 0   [M(P-R) v == 0]: True
+   OK   (P - R) w == v   [M(P-R) w == M v]: True
+   OK   v != 0: True
+5. dim ker (P - R)^j restricted to ker L (Gaussian elimination over K)
+   OK   dim ker L == 12: True
+   dims: [4, 5, 5]
+   OK   dims == recorded [4, 5, 5]: True
+   outcome from these ranks: POSITIVE (Jordan block in ker L)
+   OK   outcome agrees with the recorded outcome: True
+   OK   chain recorded if and only if POSITIVE: True
+FRACTIONS VERIFICATION OF POINT A-: ALL PASS

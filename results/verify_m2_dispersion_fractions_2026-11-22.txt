@@ -1,0 +1,10 @@
+Fractions-only proof of the full ray dispersion relation (no SymPy)
+python 3.13.18 | input m2_dispersion.json sha256 baed27fde993d25c72e042211629cf51e2b17222df19e7193f2d3d2bd3fbfe7a
+script sha256 90b544310df79e46b83d7c8c8e475c20cea212712e4cb514f6ee49aafd240d23
+verify_m2_fractions.py sha256 dff71899ff256efcced35ce7b8139fa9905345bb899fc20de0d2848c2a04f0d9
+   OK   Q has degree <= 4 in x, s, eps and only even powers of eps and x: True
+   OK   lc_x(Q) equals (9803576 eps^2 - 763140625)(39214304 eps^2 - 4014616321) (polynomial in eps^2 of degree 2, compared at 3 points): True
+   OK   S_mu - (16/3) i S_q == 0: True
+   OK   det(x - P) == (x^2-s^2-1)^4 (x^2-(1+s^2)/4)^2 Q/lc_x(Q) at all 1105 grid points (17 s x 65 eta), every coefficient in x: True
+   -> by the degree bounds in the docstring, the identity holds for all s and eta with det S^0 != 0.
+FRACTIONS PROOF OF THE RAY DISPERSION RELATION: ALL PASS

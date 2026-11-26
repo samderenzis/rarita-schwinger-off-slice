@@ -1,0 +1,52 @@
+PLAN step 2 -- reduction re-verified with q as an independent symbol
+date (UTC): 2026-11-22 18:35:59
+python 3.13.18 | sympy 1.14.0 | Linux x86_64
+command: python3 -I scripts/step2_reduction_q_free.py
+   76cdd39e6b7ef4cb71390e6b0303e6e008b55f0f206a1c39de3e3bd2ca2310aa  scripts/rs_model.py
+   fe8be4c800b5e2d48c5679a2a2bd4170b03a32e0a826e9168a34054a120a8e25  scripts/step2_reduction_q_free.py
+
+1. Clifford intertwining is q-independent
+   OK   X_A, Yhat_A contain no q (check_1 identity does not involve q): True (0.7 s)
+   OK   Model.q is the free symbol: True (0.7 s)
+2. Divergence identity, arbitrary psi, symbolic m, lam, b1, b2, q
+   OK   S^rho contains q: True (4.7 s)
+   OK   no Float atoms: True (4.7 s)
+   OK   DI holds (exact zero test on the chart): True (5.6 s)
+      zero-test statistics so far: {'entries': 4, 'zero_after_expand': 0, 'zero_after_cot_rewrite': 4, 'zero_after_reduction': 0, 'nonzero': 0}
+3. Constraint intertwining, arbitrary psi_0, Phi, symbolic m, lam, b1, b2, pi', q
+   OK   Ktilde free of d/dt: True (1.4 s)
+   OK   CI holds (exact zero test on the chart): True (45.6 s)
+      zero-test statistics, checks 2+3: {'entries': 8, 'zero_after_expand': 0, 'zero_after_cot_rewrite': 8, 'zero_after_reduction': 0, 'nonzero': 0}
+      denominators cleared in step 2 of the zero test: none
+4. pi'-factorisation P_pi' - P_pi'' = (pi' - pi'') M^-1 T L  (symbolic xi, pi', pi'', q; witness m, lam, b)
+   OK   identity holds exactly: True (2.4 s)
+   OK   P depends on q (q is live in the symbol): True (2.4 s)
+5. ker L invariant: L P = C_1 L, C_1 = pi' sum_a xi_a Gamma^0 Gamma^a  (symbolic xi, pi', q; witness m, lam, b)
+   OK   identity holds exactly: True (0.6 s)
+6. q-independent pieces
+   OK   L(xi) contains no q: True (0.0 s)
+   OK   M (= MMmat) contains no q: True (0.0 s)
+   OK   L L^dag == 3|xi|^2 I (symbolic real xi): True (0.0 s)
+   OK   det M = 81 != 0: True (0.0 s)
+7. det S^0 as a function of q (witness m, lam, b1, b2, pi' irrelevant)
+      det S^0(q) = (104376740824985370624*q**4 - 11683091652673536*sqrt(2450894)*q**3 - 34898995430557371648*q**2 + 1997999820894144*sqrt(2450894)*q + 2994817624075427833)/132101812606622109696
+   OK   det S^0 at q = slice equals parent value 3063716808343140625/132101812606622109696 (got 3063716808343140625/132101812606622109696): True (0.0 s)
+      denominator (independent of q): 132101812606622109696  | has q: False
+      numerator: degree 4 in q; factor list: (1, [(104376740824985370624*q**4 - 11683091652673536*sqrt(2450894)*q**3 - 34898995430557371648*q**2 + 1997999820894144*sqrt(2450894)*q + 2994817624075427833, 1)])
+      q_slice = sqrt(2450894)/35736 = 0.04380829236700997423751709
+      complex roots of the numerator (exploration only, 30-digit numerics; ratio to q_slice):
+         q = -0.3994492070733302988764296   q/q_slice = -9.1181186366930217898
+         q = -0.3427067065136705719903763   q/q_slice = -7.8228729767094814458
+         q = 0.4303232912476905204654105   q/q_slice = 9.8228729767094814458
+         q = 0.4870657918073502473514638   q/q_slice = 11.118118636693021790
+7b. det S^0 in the parametrisation q = (1 + eps) q_slice (exact)
+      det S^0(eps) coefficients (eps^4 .. eps^0): [677329/232744494096, 0, -5816288169683/11089809654686208, 0, 3063716808343140625/132101812606622109696]
+   OK   det S^0(eps) has rational coefficients: True (0.0 s)
+   OK   det S^0(eps) is even in eps: True (0.0 s)
+      with u = eps^2: det S^0 = (9803576*u - 763140625)*(39214304*u - 4014616321)/132101812606622109696
+      zeros at eps^2 = [763140625/9803576, 4014616321/39214304] ~ [77.8430875631504, 102.376324746195]
+   OK   smallest zero is eps^2 = 27625^2/9803576 (|eps| ~ 8.82287297670948); det S^0 != 0 for all |eps| below it: True (0.0 s)
+
+Scope: algebraic reduction identities with q free. Not checked here: coercivity on a ball, the
+curved-symbol identification, any crossing or Jordan structure off the slice.
+STEP 2 (q free): ALL PASS

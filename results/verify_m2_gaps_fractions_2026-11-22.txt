@@ -1,0 +1,22 @@
+Second check of the endpoint-gap certificate (fractions only, no SymPy)
+python 3.13.18 | input m2_gap_certificate.json sha256 08edb5afd789ae3b34fa137c46aa7942afc0d74ebd0769f0a6b458f89608f41b
+   d8ec8591561fb9807f4710d5021528664d247441930ef7287b1c133b8a77076d  scripts/verify_m2_gaps_fractions.py
+   e95afcc71ed2baf84922d0dc86ec681ff914b3117092ff4f8a815e0e8c20c5c5  scripts/verify_m2_extended_fractions.py
+   dff71899ff256efcced35ce7b8139fa9905345bb899fc20de0d2848c2a04f0d9  scripts/verify_m2_fractions.py
+   4c6ed9b6568a5bcbe0ee07c3ba247e9b34c78dbb6fb6a78a688b4f99849d1210  scripts/m2_box_tools.py
+   OK   S^rho = S_rat + (eta/35736) S_q exactly: True
+   OK   K'(t): L(1,0,t,0) (1+t^2)K'(t) == 0 (entries of (1+t^2)K' have degree 2 <= 3, L linear, so degree <= 4: checked at 5 values of t) and K' restricted to the rows outside block 2 is the 12 x 12 identity (full column rank for every t): True
+   OK   recorded M2 degrees <= (6, 4): True
+   OK   recorded M1 degrees <= (4, 4): True
+   OK   M1 == independently computed Dn (P - |xi|) K on the 5 x 5 grid: True
+   OK   M2 == independently computed Dn' (P - |xi'|) K' on the 7 x 5 grid: True
+   OK   rank-8 Taylor test on all 22 boxes (22 passed): True
+   OK   containment / branch identity on all boxes (22 passed): True
+   OK   eta enclosures and v = eps^2 D on all boxes (22 passed): True
+   OK   end eps of the lower end boxes >= eps_L: True
+   OK   end eps of the upper end boxes >= eps_U: True
+   OK   ray 1 lower sign +1: contiguous 133/50 .. 1067/400, last box touches 0: True
+   OK   ray 1 lower sign -1: contiguous 133/50 .. 1067/400, last box touches 0: True
+   OK   ray 2 upper sign +1: contiguous 157/25 .. 62913/10000, last box touches 0: True
+   OK   ray 2 upper sign -1: contiguous 157/25 .. 62913/10000, last box touches 0: True
+SECOND CHECK OF THE ENDPOINT-GAP CERTIFICATE: ALL PASS

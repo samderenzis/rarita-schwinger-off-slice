@@ -1,0 +1,65 @@
+PLAN step 5 -- exact constrained Jordan structure at off-slice point B
+date (UTC): 2026-11-22 19:35:06
+python 3.13.18 | sympy 1.14.0 | Linux x86_64
+command: python3 -I scripts/step5_point_exact.py --point B
+   76cdd39e6b7ef4cb71390e6b0303e6e008b55f0f206a1c39de3e3bd2ca2310aa  scripts/rs_model.py
+   1b78d24305758c2a020bfaed35b032643a485ff961d91bf3e1b811ae2399dc2b  scripts/points.py
+   8c178a5563f55a14554b677f78bf49b33f9769a28166002fe675b0ad77575bf6  scripts/step5_point_exact.py
+
+0. Point B constants (fractions)
+   OK   ETA^2 == D_SLICE * V  (ETA = eps*sqrt(D_SLICE)): True  [0.0 s]
+   OK   sign of ETA == SIGN: True  [0.0 s]
+   OK   a1^2 + a2^2 == U*(1+U): True  [0.0 s]
+   OK   b1^2 + b2^2 == 1+U: True  [0.0 s]
+   OK   |XI|^2 == R^2, R == 1+U: True  [0.0 s]
+   OK   V > 0 (eps real): True  [0.0 s]
+   OK   C(U, V) == 0 (U is a crossing for eps^2 = V; from the step 4 formula): True  [0.0 s]
+   OK   U is the upper root: True  [0.0 s]
+   OK   q_slice^2 == lam^2 (2/3) m^2  (q_slice = sqrt(2450894)/35736): True  [0.0 s]
+   eps = +sqrt(81608/878393760583) ~ 0.000304804760883779;  q/q_slice = 1 + eps;  upper crossing
+   ETA = eps*sqrt(2450894) = 404/1067307121*sqrt(1589220303169);  number field K = Q(i, sqrt(1589220303169))
+   XI = ('62858493798023514479/310102446766203135396', '52164981143920718591/1395461010447914109282', '53883658045/52829177742', '591024931/26414588871')
+   R = |XI| = 10887155585761/10460177192916
+
+1. Symbols at A
+   OK   q_slice == sqrt(2450894)/35736: True  [1.2 s]
+   OK   S^rho and P(XI) have entries in Q(i)(ETA): no radical left: True  [3.8 s]
+   field: QQ<sqrt(1589220303169) + I>
+   OK   L(XI) has entries in Q(i) and no q: True  [38.9 s]
+2. det S^0 at A
+   det S^0 = 43086618709359531992507710642588513/1857815457047229125650305782732230656
+   OK   det S^0 != 0: True  [39.1 s]
+   OK   det S^0 equals the step 2 formula at eps^2 = V: True  [39.1 s]
+3. Constraint symbol
+   OK   L L^dag == 3|XI|^2 I: True  [39.1 s]
+   OK   rank L(XI) == 4 (dim ker L = 12): True  [39.1 s]
+4. Characteristic polynomial of P(XI) (16 x 16)
+   OK   coefficients rational: True  [39.3 s]
+   factorisation: (1/24974913933099064368434438354264503396729896071433909132611424956420902309818248282034544231479989742500501597981353380237800890629223351592207815282099184433182788338644902658492614229347697650157315386695720449031439655159990821935523037184, [(20920354385832*x - 10887155585761, 2), (20920354385832*x + 10887155585761, 2), (10460177192916*x - 10887155585761, 5), (10460177192916*x + 10887155585761, 5), (8314524884793793442784839403155416574079758667753171654384*x**2 - 9007066381567809668815424255239530422263007451547247402503, 1)])
+   OK   R is a root of multiplicity 5: True  [39.4 s]
+   OK   all 16 roots real (linear factors, quadratic factors with positive discriminant): True  [39.4 s]
+5. Constrained structure on ker L(XI)
+   OK   ker L basis: 16 x 12: True  [39.4 s]
+   OK   ker L invariant under P: rank [kb | P kb] == 12: True  [39.4 s]
+   dim ker (P - R)^j on ker L, j = 1..4: [4, 5, 5, 5]
+   OK   ranks stabilised (dims[2] == dims[3]): True  [39.7 s]
+   algebraic multiplicity of R on ker L = 5; geometric multiplicity = 4
+   OUTCOME at this crossing: POSITIVE (nontrivial Jordan chain in ker L)
+6. Explicit chain v -> w in ker L
+   v, w scaled by 9410928528439138289358303065983080820291655500062441635968936663718753803138478807024314204554911703867045033830479375087676165678228056890219470039984321085875241900 to coprime integer coordinates over 1, i, s, i*s (s = sqrt(1589220303169))
+   largest coordinate digits: v 167, w 168
+   OK   L v == 0: True  [40.0 s]
+   OK   L w == 0: True  [40.1 s]
+   OK   (P - R) v == 0: True  [40.1 s]
+   OK   (P - R) w == v: True  [40.1 s]
+   OK   v != 0: True  [40.1 s]
+   OK   L a_gamma == 0 and (gamma - i(P-R)) a_gamma == -i gamma^2 w: True  [40.7 s]
+7. Independence of pi' (chain relations at other pi')
+   OK   pi' = 0: (P-R)v == 0 and (P-R)w == v: True  [80.7 s]
+   OK   pi' = 1/2: (P-R)v == 0 and (P-R)w == v: True  [118.0 s]
+   OK   pi' = 2: (P-R)v == 0 and (P-R)w == v: True  [158.5 s]
+   OK   pi' = -3/7: (P-R)v == 0 and (P-R)w == v: True  [191.4 s]
+   wrote data/point_B_chain.json  sha256 67ba185bae59b6347d3959d43cba8173e969833467529df34aa4e66bbf162fa2
+
+Scope: one parameter point, one covector, one eigenvalue (pointwise). Not a family statement.
+STEP 5 POINT B (exact): ALL PASS

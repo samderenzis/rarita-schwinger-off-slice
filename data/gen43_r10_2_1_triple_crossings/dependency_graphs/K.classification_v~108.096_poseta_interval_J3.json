@@ -1,0 +1,222 @@
+{
+ "verdict_id": "K.classification_v~108.096_poseta[interval J3]",
+ "ok": true,
+ "failures": [],
+ "nodes": [
+  {
+   "id": "K.root_certificate",
+   "status": "VERIFIED_EXACT",
+   "ok": true,
+   "reason": "ok",
+   "required_statuses": [
+    "VERIFIED_EXACT"
+   ],
+   "required_scope": null,
+   "role": "roots of p5 certified; u* > 0; s1 != 0"
+  },
+  {
+   "id": "K.point_algebra",
+   "status": "VERIFIED_EXACT",
+   "ok": true,
+   "reason": "ok",
+   "required_statuses": [
+    "VERIFIED_EXACT"
+   ],
+   "required_scope": null,
+   "role": "disc = C = 0 and a != 0 at the point: X0 = 1 + u* is a double root of Q"
+  },
+  {
+   "id": "A.dispersion_identity",
+   "status": "VERIFIED_EXACT",
+   "ok": true,
+   "reason": "ok",
+   "required_statuses": [
+    "VERIFIED_EXACT"
+   ],
+   "required_scope": null,
+   "role": "det(x - P) = Phi * quartic on the witness line (alg_full = 6)"
+  },
+  {
+   "id": "A.dispersion_vs_project",
+   "status": "VERIFIED_EXACT",
+   "ok": true,
+   "reason": "ok",
+   "required_statuses": [
+    "VERIFIED_EXACT"
+   ],
+   "required_scope": null,
+   "role": "project Q (used for the location) is the derived quartic"
+  },
+  {
+   "id": "MODEL.invariance",
+   "status": "VERIFIED_EXACT",
+   "ok": true,
+   "reason": "ok",
+   "required_statuses": [
+    "VERIFIED_EXACT"
+   ],
+   "required_scope": null,
+   "role": "L P = C1 L: ker L invariant"
+  },
+  {
+   "id": "MODEL.C1sq",
+   "status": "VERIFIED_EXACT",
+   "ok": true,
+   "reason": "ok",
+   "required_statuses": [
+    "VERIFIED_EXACT"
+   ],
+   "required_scope": null,
+   "role": "quotient eigenvalues +-pi'|xi| != r (pi' = 1/2): alg on ker L = 6"
+  },
+  {
+   "id": "MODEL.LLdag",
+   "status": "VERIFIED_EXACT",
+   "ok": true,
+   "reason": "ok",
+   "required_statuses": [
+    "VERIFIED_EXACT"
+   ],
+   "required_scope": null,
+   "role": "L L^dag = 3|xi|^2 I: L surjective, quotient C^16/ker L = C^4"
+  },
+  {
+   "id": "C.upper_ray1",
+   "status": "VERIFIED_EXACT",
+   "ok": true,
+   "reason": "ok",
+   "required_statuses": [
+    "VERIFIED_EXACT"
+   ],
+   "required_scope": "global polynomial identity",
+   "role": "rank <= 12 on ray 1 everywhere"
+  },
+  {
+   "id": "K.ray1_membership",
+   "status": "VERIFIED_EXACT",
+   "ok": true,
+   "reason": "ok",
+   "required_statuses": [
+    "VERIFIED_EXACT"
+   ],
+   "required_scope": null,
+   "role": "the point lies on ray 1 (tau = (r-1)/s, tau != +-1)"
+  },
+  {
+   "id": "K.exact.field",
+   "status": "VERIFIED_EXACT",
+   "ok": true,
+   "reason": "ok",
+   "required_statuses": [
+    "VERIFIED_EXACT"
+   ],
+   "required_scope": null,
+   "role": ""
+  },
+  {
+   "id": "K.exact.rank_M1_le_12_norm",
+   "status": "CERTIFICATE_INCONCLUSIVE",
+   "ok": false,
+   "reason": "status CERTIFICATE_INCONCLUSIVE not in ['VERIFIED_EXACT']",
+   "required_statuses": [
+    "VERIFIED_EXACT"
+   ],
+   "required_scope": null,
+   "role": "norm-bound upper rank"
+  },
+  {
+   "id": "K.d0_nonzero_v~108.096_poseta",
+   "status": "VERIFIED_INTERVAL",
+   "ok": true,
+   "reason": "ok",
+   "required_statuses": [
+    "VERIFIED_EXACT",
+    "VERIFIED_INTERVAL"
+   ],
+   "required_scope": null,
+   "role": "d0 != 0 at the point: Pt - r d0 = d0 (P - r)"
+  },
+  {
+   "id": "K.rank_ge12_v~108.096_poseta",
+   "status": "VERIFIED_INTERVAL",
+   "ok": true,
+   "reason": "ok",
+   "required_statuses": [
+    "VERIFIED_EXACT",
+    "VERIFIED_INTERVAL"
+   ],
+   "required_scope": null,
+   "role": "geo <= 4 at the point"
+  },
+  {
+   "id": "K.rank2_ge11_v~108.096_poseta",
+   "status": "VERIFIED_INTERVAL",
+   "ok": true,
+   "reason": "ok",
+   "required_statuses": [
+    "VERIFIED_EXACT",
+    "VERIFIED_INTERVAL"
+   ],
+   "required_scope": null,
+   "role": "n2 <= 5 at the point"
+  }
+ ],
+ "edges": [
+  {
+   "from": "K.root_certificate",
+   "to": "K.classification_v~108.096_poseta[interval J3]"
+  },
+  {
+   "from": "K.point_algebra",
+   "to": "K.classification_v~108.096_poseta[interval J3]"
+  },
+  {
+   "from": "A.dispersion_identity",
+   "to": "K.classification_v~108.096_poseta[interval J3]"
+  },
+  {
+   "from": "A.dispersion_vs_project",
+   "to": "K.classification_v~108.096_poseta[interval J3]"
+  },
+  {
+   "from": "MODEL.invariance",
+   "to": "K.classification_v~108.096_poseta[interval J3]"
+  },
+  {
+   "from": "MODEL.C1sq",
+   "to": "K.classification_v~108.096_poseta[interval J3]"
+  },
+  {
+   "from": "MODEL.LLdag",
+   "to": "K.classification_v~108.096_poseta[interval J3]"
+  },
+  {
+   "from": "C.upper_ray1",
+   "to": "K.classification_v~108.096_poseta[interval J3]"
+  },
+  {
+   "from": "K.ray1_membership",
+   "to": "K.classification_v~108.096_poseta[interval J3]"
+  },
+  {
+   "from": "K.exact.field",
+   "to": "K.classification_v~108.096_poseta[interval J3]"
+  },
+  {
+   "from": "K.exact.rank_M1_le_12_norm",
+   "to": "K.classification_v~108.096_poseta[interval J3]"
+  },
+  {
+   "from": "K.d0_nonzero_v~108.096_poseta",
+   "to": "K.classification_v~108.096_poseta[interval J3]"
+  },
+  {
+   "from": "K.rank_ge12_v~108.096_poseta",
+   "to": "K.classification_v~108.096_poseta[interval J3]"
+  },
+  {
+   "from": "K.rank2_ge11_v~108.096_poseta",
+   "to": "K.classification_v~108.096_poseta[interval J3]"
+  }
+ ]
+}

@@ -1,0 +1,34 @@
+Milestone 2 (partial) -- Jordan chains at both crossings for every 0 < |eps| <= 1 (witness m, lam, b; q free)
+date (UTC): 2026-11-22 19:59:04
+python 3.13.18 | sympy 1.14.0 | Linux x86_64
+command: python3 -I scripts/m2_family_q_direction.py
+   76cdd39e6b7ef4cb71390e6b0303e6e008b55f0f206a1c39de3e3bd2ca2310aa  scripts/rs_model.py
+   1b78d24305758c2a020bfaed35b032643a485ff961d91bf3e1b811ae2399dc2b  scripts/points.py
+   c38c85bb424712403b7250cf651ec3e077be23560f86540f2652d77f7dcbfa11  scripts/m2_family_q_direction.py
+C. Crossings are real, distinct and positive for 0 < eps^2 <= 1
+   discriminant in u, as a function of v = eps^2: -95227628033791228445188816896*v*(823*v - 91809)
+   OK   discriminant > 0 on (0, 1]: v*(91809 - 823 v) > 0 there, with a positive constant factor: True  [0.0 s]
+   OK   C coefficient of u^2 > 0 on [0, 1] (no root there, positive at 0): True  [0.0 s]
+   OK   C coefficient of u^0 > 0 on [0, 1]: True  [0.0 s]
+   OK   C coefficient of u^1 < 0 on [0, 1]  (so both roots u are positive): True  [0.0 s]
+G. The matrix M(tau, eta) and the minor d
+   OK   tau = 1/10 gives s = 20/99 and |xi| = 101/99 (the slice crossing): True  [0.6 s]
+   OK   K(s) entries are affine in s: True  [1.1 s]
+   OK   L K == 0 (columns of K lie in ker L): True  [1.1 s]
+   OK   Dn * (P - |xi|) K is polynomial in tau, eta: True  [1.6 s]
+   minor rows [2, 3, 4, 5, 8, 9, 10, 11], cols [0, 1, 4, 5, 8, 9, 10, 11]: degree (a, b) = (32, 32), 561 terms
+   d(0,0) = 3946231920381764158155956306994625686328973246249123088268337584747544952237928956016219788226783156773576560464864682443745269802055949979150278212890625/4194304
+   OK   d(0,0) is a nonzero rational: True  [29.7 s]
+B + G. Box certificates
+   OK   Ct(1/10, 0) == 0 (the centre is on the crossing curve): True  [29.7 s]
+   OK   eps0 = 1/1000: hb = 783/500 (hb^2 >= eps0^2 D: True), ha = 1/20000; crossings cannot leave the box: True; Dn != 0: True; Taylor bound / |d(0,0)| = 0.000337134 < 1: True  [29.8 s]
+   OK   eps0 = 1/100: hb = 1957/125 (hb^2 >= eps0^2 D: True), ha = 1/2000; crossings cannot leave the box: True; Dn != 0: True; Taylor bound / |d(0,0)| = 0.00341016 < 1: True  [29.8 s]
+   OK   eps0 = 1/10: hb = 78277/500 (hb^2 >= eps0^2 D: True), ha = 1/200; crossings cannot leave the box: True; Dn != 0: True; Taylor bound / |d(0,0)| = 0.0380455 < 1: True  [29.8 s]
+   OK   eps0 = 1/2: hb = 782767/1000 (hb^2 >= eps0^2 D: True), ha = 1/50; crossings cannot leave the box: True; Dn != 0: True; Taylor bound / |d(0,0)| = 0.244469 < 1: True  [29.8 s]
+   OK   eps0 = 1: hb = 782767/500 (hb^2 >= eps0^2 D: True), ha = 1/20; crossings cannot leave the box: True; Dn != 0: True; Taylor bound / |d(0,0)| = 0.898967 < 1: True  [29.8 s]
+   -> for every 0 < |eps| <= 1, rank (P - r)|ker L >= 8 at both crossings: geometric multiplicity <= 4 < 5.
+   wrote data/m2_minor.json  sha256 faa705683310ca2f9d86885e8072b6ddab332f14ebb79b07bae5a19edfdfbd69
+
+Scope: one-parameter family (q only); pointwise in eps; uses (R) rotation invariance, (M) step 4, step 2, the general
+curved-symbol identification, and coercivity by proof reading. AI-checked only.
+MILESTONE 2 (q-direction, |eps| <= 1): ALL PASS

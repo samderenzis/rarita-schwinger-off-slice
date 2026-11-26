@@ -1,0 +1,19 @@
+Restricted-symbol checks (fractions engine, no SymPy)
+python 3.13.18
+   1d0414a5b1327e04fc605bc96337389303b642101a37090492cf4c9dc41b1021  audit/restricted_symbol_fractions.py
+   dff71899ff256efcced35ce7b8139fa9905345bb899fc20de0d2848c2a04f0d9  scripts/verify_m2_fractions.py
+   7aede38009faeafb08693bcf0a034d1b2e6c62302bab901905a9a047e9a932a7  scripts/verify_point_fractions.py
+   4c6ed9b6568a5bcbe0ee07c3ba247e9b34c78dbb6fb6a78a688b4f99849d1210  scripts/m2_box_tools.py
+   7bcf43c67673ddca843d4e8a4607d4753d1512885d46fbc6682c5bcf3a51f082  data/m2_extended_certificate.json
+   OK   S^rho = S_rat + (eta/35736) S_q exactly (the irrational mu cancels): True
+(I) L P = C1 L for all xi, eta  (grid 3^4 x 5)
+   OK   L P == C1 L at all 405 grid points (pi' = 1/2): True
+(II) C1^2 = pi'^2 |xi|^2 I, tr C1 = 0 (grid 3^4)
+   OK   C1^2 == pi'^2 |xi|^2 I and tr C1 == 0 at all 81 grid points: True
+(III) K(s) has a 12 x 12 identity submatrix
+   OK   rows [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15] of K form the 12 x 12 identity (constant in s): True
+   OK   L(s,0,1,0) K(s) == 0 for all s (degree <= 2 in s; checked at 3 values): True
+(IV) rank M(tau, eta) <= 8 identically (grid 37 x 37)
+   OK   rank M <= 8 at all 1369 grid points (max rank found 8): True
+   -> every 9 x 9 minor of M vanishes identically; with (III), rank (P - |xi|)|ker L <= 8 wherever Dn != 0.
+RESTRICTED-SYMBOL CHECKS (fractions): ALL PASS

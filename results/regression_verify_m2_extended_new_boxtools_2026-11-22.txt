@@ -1,0 +1,20 @@
+Second check of the extended Milestone 2 certificate (fractions only, no SymPy)
+python 3.13.18 | input m2_extended_certificate.json sha256 7bcf43c67673ddca843d4e8a4607d4753d1512885d46fbc6682c5bcf3a51f082
+script sha256 e95afcc71ed2baf84922d0dc86ec681ff914b3117092ff4f8a815e0e8c20c5c5
+m2_box_tools.py sha256 4c6ed9b6568a5bcbe0ee07c3ba247e9b34c78dbb6fb6a78a688b4f99849d1210
+verify_m2_fractions.py sha256 dff71899ff256efcced35ce7b8139fa9905345bb899fc20de0d2848c2a04f0d9
+1. Matrix identity on a 5 x 5 grid
+   OK   every recorded entry has degree <= 4 in tau and in eta: True
+   OK   S_mu - (16/3) i S_q == 0: True
+   OK   recorded M(tau, eta) == independently computed Dn (P - |xi|) K at all 25 grid points, all 192 entries: True
+2-3. Boxes
+   OK   rank-8 Taylor test (independent shift, subdivided if needed) passes on all 108 boxes (108 passed): True
+   OK   containment + branch identity on all boxes (108 passed): True
+   OK   eta enclosures, v = eps^2 * 2450894, Dn != 0 on all boxes (108 passed): True
+   OK   lower, sign +1: contiguous cover of [1, 133/50]: True
+   OK   lower, sign -1: contiguous cover of [1, 133/50]: True
+   OK   upper, sign +1: contiguous cover of [1, 157/25]: True
+   OK   upper, sign -1: contiguous cover of [1, 157/25]: True
+   OK   lower target^2 < eps_L^2 = (34404 - 12 sqrt(5659689))/823: True
+   OK   upper target^2 < eps_U^2 = (58228 - 20 sqrt(1645345))/823: True
+SECOND CHECK OF EXTENDED MILESTONE 2 CERTIFICATE: ALL PASS

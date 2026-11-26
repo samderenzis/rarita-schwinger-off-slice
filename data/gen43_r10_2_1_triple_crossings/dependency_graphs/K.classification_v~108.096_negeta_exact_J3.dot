@@ -1,0 +1,33 @@
+digraph deps {
+  rankdir=LR;
+  "K.classification_v~108.096_negeta[exact J3]" [shape=box, style=bold];
+  "K.root_certificate" [color=darkgreen, label="K.root_certificate\nVERIFIED_EXACT"];
+  "K.point_algebra" [color=darkgreen, label="K.point_algebra\nVERIFIED_EXACT"];
+  "A.dispersion_identity" [color=darkgreen, label="A.dispersion_identity\nVERIFIED_EXACT"];
+  "A.dispersion_vs_project" [color=darkgreen, label="A.dispersion_vs_project\nVERIFIED_EXACT"];
+  "MODEL.invariance" [color=darkgreen, label="MODEL.invariance\nVERIFIED_EXACT"];
+  "MODEL.C1sq" [color=darkgreen, label="MODEL.C1sq\nVERIFIED_EXACT"];
+  "MODEL.LLdag" [color=darkgreen, label="MODEL.LLdag\nVERIFIED_EXACT"];
+  "C.upper_ray1" [color=darkgreen, label="C.upper_ray1\nVERIFIED_EXACT"];
+  "K.ray1_membership" [color=darkgreen, label="K.ray1_membership\nVERIFIED_EXACT"];
+  "K.exact.field" [color=darkgreen, label="K.exact.field\nVERIFIED_EXACT"];
+  "K.exact.rank_M1_le_12_norm" [color=red, label="K.exact.rank_M1_le_12_norm\nCERTIFICATE_INCONCLUSIVE"];
+  "K.exact.d0_nonzero" [color=darkgreen, label="K.exact.d0_nonzero\nVERIFIED_EXACT"];
+  "K.exact.rank_M1_ge_12" [color=darkgreen, label="K.exact.rank_M1_ge_12\nVERIFIED_EXACT"];
+  "K.exact.rank_M2_ge_11" [color=darkgreen, label="K.exact.rank_M2_ge_11\nVERIFIED_EXACT"];
+  "K.root_certificate" -> "K.classification_v~108.096_negeta[exact J3]";
+  "K.point_algebra" -> "K.classification_v~108.096_negeta[exact J3]";
+  "A.dispersion_identity" -> "K.classification_v~108.096_negeta[exact J3]";
+  "A.dispersion_vs_project" -> "K.classification_v~108.096_negeta[exact J3]";
+  "MODEL.invariance" -> "K.classification_v~108.096_negeta[exact J3]";
+  "MODEL.C1sq" -> "K.classification_v~108.096_negeta[exact J3]";
+  "MODEL.LLdag" -> "K.classification_v~108.096_negeta[exact J3]";
+  "C.upper_ray1" -> "K.classification_v~108.096_negeta[exact J3]";
+  "K.ray1_membership" -> "K.classification_v~108.096_negeta[exact J3]";
+  "K.exact.field" -> "K.classification_v~108.096_negeta[exact J3]";
+  "K.exact.rank_M1_le_12_norm" -> "K.classification_v~108.096_negeta[exact J3]";
+  "K.exact.field" -> "K.classification_v~108.096_negeta[exact J3]";
+  "K.exact.d0_nonzero" -> "K.classification_v~108.096_negeta[exact J3]";
+  "K.exact.rank_M1_ge_12" -> "K.classification_v~108.096_negeta[exact J3]";
+  "K.exact.rank_M2_ge_11" -> "K.classification_v~108.096_negeta[exact J3]";
+}

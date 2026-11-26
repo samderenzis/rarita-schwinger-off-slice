@@ -1,0 +1,15 @@
+Exact algebraic multiplicity at the endpoint crossings
+date (UTC): 2026-11-22 21:53:01
+python 3.13.18 | sympy 1.14.0
+   b1cd8f7160ac1f8d00dd765b46a34fd86fed121061758d2a0980e7a83b57c7d7  audit/endpoint_multiplicity.py
+   baed27fde993d25c72e042211629cf51e2b17222df19e7193f2d3d2bd3fbfe7a  data/m2_dispersion.json
+   OK   (1) Q has total degree <= 4 in (x, s): True
+   OK       Q_h(x, s, 1) == Q: True
+   OK       lc_x(Q_h) == lc_x(Q) (x^4 coefficient free of s and b): True
+   (2) lower endpoint, xi = (0,0,1,0), eps = eps_L: Q(X=1) = 0, dQ/dX(X=1) = -67603406660674704 - 27990756539088*sqrt(5659689) ~ -1.3419370E+17, lc = 2.5902073E+18
+   OK   (2) lower endpoint, xi = (0,0,1,0), eps = eps_L: X = 1 is a simple root (value 0, derivative != 0, lc != 0): True
+   (3) upper endpoint, xi = (1,0,0,0), eps = eps_U: Q(X=1) = 0, dQ/dX(X=1) = 422979956239154544 + 340756598051280*sqrt(1645345) ~ 8.6007186E+17, lc = 9.2375173E+17
+   OK   (3) upper endpoint, xi = (1,0,0,0), eps = eps_U: X = 1 is a simple root (value 0, derivative != 0, lc != 0): True
+   OK   (4) quotient factor at r = 1: 1 - 1/4 != 0: True
+   -> at both endpoint crossings, r = 1 has algebraic multiplicity exactly 5 on ker L.
+ENDPOINT MULTIPLICITY: ALL PASS

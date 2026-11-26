@@ -1,0 +1,10 @@
+Milestone 2 input -- curved-symbol identification with symbolic covector k and symbolic charge
+date (UTC): 2026-11-22 19:57:44
+python 3.13.18 | sympy 1.14.0
+command: python3 -I scripts/m2_curved_symbol_general.py
+   76cdd39e6b7ef4cb71390e6b0303e6e008b55f0f206a1c39de3e3bd2ca2310aa  scripts/rs_model.py
+   d9b8d320cba54d2978609b2c2042073160cb73be2697445e2f7a2fa3b0d902de  scripts/m2_curved_symbol_general.py
+   OK   degree in Lam <= 1: True
+   OK   principal symbol of curved K' at y0 == i P(E(y0)^T k) for symbolic k and eta: True
+   (7.8 s)
+GENERAL CURVED-SYMBOL IDENTIFICATION: PASS

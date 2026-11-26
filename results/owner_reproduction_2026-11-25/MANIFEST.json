@@ -1,0 +1,627 @@
+{
+  "package": "offslice-owner-rerun 1.1 (2026-11-25)",
+  "started_local": "2026-11-25_204424",
+  "python": "3.14.7",
+  "sympy": "1.14.0",
+  "mpmath": "1.3.0",
+  "os": "Windows 11",
+  "sha256sums_ok": true,
+  "sha256sums_file_sha256": "8aa388b53cea9f057b687d33bce65fc2c3724772d2c1c28000e13608ece81ef9",
+  "parent_given": true,
+  "skip_long": false,
+  "jobs": [
+    {
+      "job": "points self-check",
+      "argv": [
+        "python",
+        "-I",
+        "scripts/points.py"
+      ],
+      "status": "MATCH",
+      "committed_log": null,
+      "seconds": 0.0,
+      "exit": 0
+    },
+    {
+      "job": "witness check (rebuilt parent witness_min on rs_model)",
+      "argv": [
+        "python",
+        "-I",
+        "scripts/witness_check.py"
+      ],
+      "status": "MATCH",
+      "committed_log": null,
+      "seconds": 0.7,
+      "exit": 0
+    },
+    {
+      "job": "step 1 slice regression vs parent v1.0.11",
+      "argv": [
+        "python",
+        "-I",
+        "scripts/step1_slice_regression.py",
+        "--parent",
+        "..\\..\\..\\..\\rarita-schwinger-well-posedness",
+        "--out",
+        "..\\..\\new_logs\\step1_slice_regression_2026-11-22.txt"
+      ],
+      "status": "MATCH",
+      "committed_log": "step1_slice_regression_2026-11-22.txt",
+      "seconds": 35.8,
+      "exit": 0,
+      "log_sha256": "c03a08961eb1c71e40b02a45829bf06f96089d20dad5e50bd72996c22e099604",
+      "compared_against": "step1_slice_regression_2026-11-22.txt"
+    },
+    {
+      "job": "step 2 reduction with q free",
+      "argv": [
+        "python",
+        "-I",
+        "scripts/step2_reduction_q_free.py",
+        "--out",
+        "..\\..\\new_logs\\step2_reduction_q_free_2026-11-22.txt"
+      ],
+      "status": "MATCH",
+      "committed_log": "step2_reduction_q_free_2026-11-22.txt",
+      "seconds": 28.4,
+      "exit": 0,
+      "log_sha256": "64dfa691cac4e45e96695cc9c5e60e9b8897eaf84d5ffe1e62c84e3adc753d48",
+      "compared_against": "step2_reduction_q_free_2026-11-22.txt"
+    },
+    {
+      "job": "step 4 dispersion and crossings",
+      "argv": [
+        "python",
+        "-I",
+        "scripts/step4_dispersion_and_crossings.py",
+        "--out",
+        "..\\..\\new_logs\\step4_dispersion_and_crossings_2026-11-22.txt"
+      ],
+      "status": "MATCH",
+      "committed_log": "step4_dispersion_and_crossings_2026-11-22.txt",
+      "seconds": 8.4,
+      "exit": 0,
+      "log_sha256": "3b607635b503c8e6e170bc8532520b5ffd520d52dedf81022d64ec12101a084d",
+      "compared_against": "step4_dispersion_and_crossings_2026-11-22.txt"
+    },
+    {
+      "job": "step 5 exact point A",
+      "argv": [
+        "python",
+        "-I",
+        "scripts/step5_point_exact.py",
+        "--point",
+        "A",
+        "--out",
+        "..\\..\\new_logs\\step5_point_A_exact_2026-11-22.txt",
+        "--json",
+        "..\\..\\regenerated_data\\point_A_chain.json"
+      ],
+      "status": "MATCH-EOL",
+      "committed_log": "step5_point_A_exact_2026-11-22.txt",
+      "seconds": 110.0,
+      "exit": 0,
+      "data": {
+        "point_A_chain.json": {
+          "new": "1af36bc24d887da017a108a47577461e97ecedd84958d8db0898800ab7b4afa6",
+          "committed": "4f279a6a11a638980e4e8fdfde126fe862f40e1af6ec8a83fb2c5e097dad641a",
+          "result": "EOL",
+          "new_after_crlf_to_lf": "4f279a6a11a638980e4e8fdfde126fe862f40e1af6ec8a83fb2c5e097dad641a"
+        }
+      },
+      "log_sha256": "64fd9bf1aaf5cf41de6df3500ab0fc6c850a68df13a1f6c15bbe7c4104f7d4c3",
+      "compared_against": "step5_point_A_exact_2026-11-22.txt",
+      "notes": [
+        "data/point_A_chain.json: identical to the committed file except Windows line endings (CRLF); after CRLF->LF sha256 = committed"
+      ]
+    },
+    {
+      "job": "step 5 curved symbol point A",
+      "argv": [
+        "python",
+        "-I",
+        "scripts/step5_curved_symbol.py",
+        "--point",
+        "A",
+        "--out",
+        "..\\..\\new_logs\\step5_point_A_curved_symbol_2026-11-22.txt"
+      ],
+      "status": "MATCH",
+      "committed_log": "step5_point_A_curved_symbol_2026-11-22.txt",
+      "seconds": 5.7,
+      "exit": 0,
+      "log_sha256": "e3477eba23041e4d9c3f67cf2b4679ef1ac98f8b2b4d6b6e4c76ee65b23d6a49",
+      "compared_against": "step5_point_A_curved_symbol_2026-11-22.txt"
+    },
+    {
+      "job": "second engine point A",
+      "argv": [
+        "python",
+        "-I",
+        "scripts/verify_point_fractions.py",
+        "data/point_A_chain.json",
+        "--out",
+        "..\\..\\new_logs\\verify_point_A_fractions_2026-11-22.txt"
+      ],
+      "status": "MATCH",
+      "committed_log": "verify_point_A_fractions_2026-11-22.txt",
+      "seconds": 1.6,
+      "exit": 0,
+      "log_sha256": "50fcf44a1e55e6eaadc3bd2db058236ee763853de212462edc36f30256ec1a20",
+      "compared_against": "verify_point_A_fractions_2026-11-22.txt"
+    },
+    {
+      "job": "step 5 exact point A-",
+      "argv": [
+        "python",
+        "-I",
+        "scripts/step5_point_exact.py",
+        "--point",
+        "A-",
+        "--out",
+        "..\\..\\new_logs\\step5_point_Am_exact_2026-11-22.txt",
+        "--json",
+        "..\\..\\regenerated_data\\point_Am_chain.json"
+      ],
+      "status": "MATCH-EOL",
+      "committed_log": "step5_point_Am_exact_2026-11-22.txt",
+      "seconds": 110.2,
+      "exit": 0,
+      "data": {
+        "point_Am_chain.json": {
+          "new": "c2b0e836d2b0f088ace028efa2f694983eb45c45a89a1a470d4e67501b9d0151",
+          "committed": "a9f1c12da5eae7ae36c39016e0a1a9d85d6d49c7286a1e017b293db59126aa8a",
+          "result": "EOL",
+          "new_after_crlf_to_lf": "a9f1c12da5eae7ae36c39016e0a1a9d85d6d49c7286a1e017b293db59126aa8a"
+        }
+      },
+      "log_sha256": "0c8a7791626d3d86e5404a3a93b26f8e6a455f72ee6f5fddaf7f56f00a66a6b2",
+      "compared_against": "step5_point_Am_exact_2026-11-22.txt",
+      "notes": [
+        "data/point_Am_chain.json: identical to the committed file except Windows line endings (CRLF); after CRLF->LF sha256 = committed"
+      ]
+    },
+    {
+      "job": "step 5 curved symbol point A-",
+      "argv": [
+        "python",
+        "-I",
+        "scripts/step5_curved_symbol.py",
+        "--point",
+        "A-",
+        "--out",
+        "..\\..\\new_logs\\step5_point_Am_curved_symbol_2026-11-22.txt"
+      ],
+      "status": "MATCH",
+      "committed_log": "step5_point_Am_curved_symbol_2026-11-22.txt",
+      "seconds": 5.8,
+      "exit": 0,
+      "log_sha256": "b96710b8c06375919618f5db0ebed7633d65abe591e58ee8119c53b67365016e",
+      "compared_against": "step5_point_Am_curved_symbol_2026-11-22.txt"
+    },
+    {
+      "job": "second engine point A-",
+      "argv": [
+        "python",
+        "-I",
+        "scripts/verify_point_fractions.py",
+        "data/point_Am_chain.json",
+        "--out",
+        "..\\..\\new_logs\\verify_point_Am_fractions_2026-11-22.txt"
+      ],
+      "status": "MATCH",
+      "committed_log": "verify_point_Am_fractions_2026-11-22.txt",
+      "seconds": 1.7,
+      "exit": 0,
+      "log_sha256": "e6d1ade5d68f421e6e4d57e62a09ecc9fab25d86258125ba8923a8f2d33ffcee",
+      "compared_against": "verify_point_Am_fractions_2026-11-22.txt"
+    },
+    {
+      "job": "step 5 exact point B",
+      "argv": [
+        "python",
+        "-I",
+        "scripts/step5_point_exact.py",
+        "--point",
+        "B",
+        "--out",
+        "..\\..\\new_logs\\step5_point_B_exact_2026-11-22.txt",
+        "--json",
+        "..\\..\\regenerated_data\\point_B_chain.json"
+      ],
+      "status": "MATCH-EOL",
+      "committed_log": "step5_point_B_exact_2026-11-22.txt",
+      "seconds": 121.3,
+      "exit": 0,
+      "data": {
+        "point_B_chain.json": {
+          "new": "a0c53960aff3173f7a15f7b5e40d065f860e61a5c74427c8f121898b73148efe",
+          "committed": "67ba185bae59b6347d3959d43cba8173e969833467529df34aa4e66bbf162fa2",
+          "result": "EOL",
+          "new_after_crlf_to_lf": "67ba185bae59b6347d3959d43cba8173e969833467529df34aa4e66bbf162fa2"
+        }
+      },
+      "log_sha256": "2ab47e6a8f04dc0c0dc6645d685c4127e34b610f71d1e3265a6a2cc588783e4f",
+      "compared_against": "step5_point_B_exact_2026-11-22.txt",
+      "notes": [
+        "data/point_B_chain.json: identical to the committed file except Windows line endings (CRLF); after CRLF->LF sha256 = committed"
+      ]
+    },
+    {
+      "job": "step 5 curved symbol point B",
+      "argv": [
+        "python",
+        "-I",
+        "scripts/step5_curved_symbol.py",
+        "--point",
+        "B",
+        "--out",
+        "..\\..\\new_logs\\step5_point_B_curved_symbol_2026-11-22.txt"
+      ],
+      "status": "MATCH",
+      "committed_log": "step5_point_B_curved_symbol_2026-11-22.txt",
+      "seconds": 6.4,
+      "exit": 0,
+      "log_sha256": "16f3eb9f442d53183dfdeddbef7e4fbc80745f7ff7d79eeb2f35a9f55819e373",
+      "compared_against": "step5_point_B_curved_symbol_2026-11-22.txt"
+    },
+    {
+      "job": "second engine point B",
+      "argv": [
+        "python",
+        "-I",
+        "scripts/verify_point_fractions.py",
+        "data/point_B_chain.json",
+        "--out",
+        "..\\..\\new_logs\\verify_point_B_fractions_2026-11-22.txt"
+      ],
+      "status": "MATCH",
+      "committed_log": "verify_point_B_fractions_2026-11-22.txt",
+      "seconds": 1.7,
+      "exit": 0,
+      "log_sha256": "ebc833d387a902e27e24cd780e8e2be194a22eea6089e3371231ea2415e75eb0",
+      "compared_against": "verify_point_B_fractions_2026-11-22.txt"
+    },
+    {
+      "job": "step 5 exact point B-",
+      "argv": [
+        "python",
+        "-I",
+        "scripts/step5_point_exact.py",
+        "--point",
+        "B-",
+        "--out",
+        "..\\..\\new_logs\\step5_point_Bm_exact_2026-11-22.txt",
+        "--json",
+        "..\\..\\regenerated_data\\point_Bm_chain.json"
+      ],
+      "status": "MATCH-EOL",
+      "committed_log": "step5_point_Bm_exact_2026-11-22.txt",
+      "seconds": 121.2,
+      "exit": 0,
+      "data": {
+        "point_Bm_chain.json": {
+          "new": "ee6a2999e9ace1a18afd85b1cd3ba60d3fe3dbffb2b5ba4c70db5fa7512da83b",
+          "committed": "029596d7cb79672342cdcfc4a108da6da32717945faa5da17ba33f3df959e130",
+          "result": "EOL",
+          "new_after_crlf_to_lf": "029596d7cb79672342cdcfc4a108da6da32717945faa5da17ba33f3df959e130"
+        }
+      },
+      "log_sha256": "67177079b373664ff7e564f28d3361923a0da9539e6a64c4cae1c7c1cebb4297",
+      "compared_against": "step5_point_Bm_exact_2026-11-22.txt",
+      "notes": [
+        "data/point_Bm_chain.json: identical to the committed file except Windows line endings (CRLF); after CRLF->LF sha256 = committed"
+      ]
+    },
+    {
+      "job": "step 5 curved symbol point B-",
+      "argv": [
+        "python",
+        "-I",
+        "scripts/step5_curved_symbol.py",
+        "--point",
+        "B-",
+        "--out",
+        "..\\..\\new_logs\\step5_point_Bm_curved_symbol_2026-11-22.txt"
+      ],
+      "status": "MATCH",
+      "committed_log": "step5_point_Bm_curved_symbol_2026-11-22.txt",
+      "seconds": 6.3,
+      "exit": 0,
+      "log_sha256": "2eb75ed87993270c22f21d765531eac32b7c9ed3ab67c79ee5903b20f9824a62",
+      "compared_against": "step5_point_Bm_curved_symbol_2026-11-22.txt"
+    },
+    {
+      "job": "second engine point B-",
+      "argv": [
+        "python",
+        "-I",
+        "scripts/verify_point_fractions.py",
+        "data/point_Bm_chain.json",
+        "--out",
+        "..\\..\\new_logs\\verify_point_Bm_fractions_2026-11-22.txt"
+      ],
+      "status": "MATCH",
+      "committed_log": "verify_point_Bm_fractions_2026-11-22.txt",
+      "seconds": 1.7,
+      "exit": 0,
+      "log_sha256": "365d8ebf25f33aa9365404eb44a1333be00e993e3aa231d756febacf222e6317",
+      "compared_against": "verify_point_Bm_fractions_2026-11-22.txt"
+    },
+    {
+      "job": "M2 rotation invariance",
+      "argv": [
+        "python",
+        "-I",
+        "scripts/m2_rotation_invariance.py",
+        "--out",
+        "..\\..\\new_logs\\m2_rotation_invariance_2026-11-22.txt"
+      ],
+      "status": "MATCH",
+      "committed_log": "m2_rotation_invariance_2026-11-22.txt",
+      "seconds": 5.9,
+      "exit": 0,
+      "log_sha256": "4dad5aa4771644bd5a6433e739683fcdae5a3767c0f38763cb3aba920e52f545",
+      "compared_against": "m2_rotation_invariance_2026-11-22.txt"
+    },
+    {
+      "job": "M2 q-direction certificate",
+      "argv": [
+        "python",
+        "-I",
+        "scripts/m2_family_q_direction.py",
+        "--out",
+        "..\\..\\new_logs\\m2_family_q_direction_2026-11-22.txt",
+        "--json",
+        "..\\..\\regenerated_data\\m2_minor.json"
+      ],
+      "status": "MATCH-EOL",
+      "committed_log": "m2_family_q_direction_2026-11-22.txt",
+      "seconds": 49.3,
+      "exit": 0,
+      "data": {
+        "m2_minor.json": {
+          "new": "130f4966d067cf027ebba4dbd15ca5cab7fb52aeeb30ee21e4065e29bd758021",
+          "committed": "faa705683310ca2f9d86885e8072b6ddab332f14ebb79b07bae5a19edfdfbd69",
+          "result": "EOL",
+          "new_after_crlf_to_lf": "faa705683310ca2f9d86885e8072b6ddab332f14ebb79b07bae5a19edfdfbd69"
+        }
+      },
+      "log_sha256": "ec7c148e823d1b7ff378ab623463d978190762291e1705e472bd8bfbc6545937",
+      "compared_against": "m2_family_q_direction_2026-11-22.txt",
+      "notes": [
+        "data/m2_minor.json: identical to the committed file except Windows line endings (CRLF); after CRLF->LF sha256 = committed"
+      ]
+    },
+    {
+      "job": "M2 second engine",
+      "argv": [
+        "python",
+        "-I",
+        "scripts/verify_m2_fractions.py",
+        "data/m2_minor.json",
+        "--out",
+        "..\\..\\new_logs\\verify_m2_fractions_2026-11-22.txt"
+      ],
+      "status": "MATCH",
+      "committed_log": "verify_m2_fractions_2026-11-22.txt",
+      "seconds": 86.1,
+      "exit": 0,
+      "log_sha256": "1fb07a30b5a875696c760cd7c32eef3b8c2ab8944a62ba836972292a9bbbc5fa",
+      "compared_against": "verify_m2_fractions_2026-11-22.txt"
+    },
+    {
+      "job": "M2 extended certificate",
+      "argv": [
+        "python",
+        "-I",
+        "scripts/m2_family_extended.py",
+        "--out",
+        "..\\..\\new_logs\\m2_family_extended_2026-11-22.txt",
+        "--json",
+        "..\\..\\regenerated_data\\m2_extended_certificate.json"
+      ],
+      "status": "MATCH-KNOWN",
+      "committed_log": "m2_family_extended_2026-11-22.txt",
+      "seconds": 13.4,
+      "exit": 0,
+      "data": {
+        "m2_extended_certificate.json": {
+          "new": "7bcf43c67673ddca843d4e8a4607d4753d1512885d46fbc6682c5bcf3a51f082",
+          "committed": "7bcf43c67673ddca843d4e8a4607d4753d1512885d46fbc6682c5bcf3a51f082",
+          "result": "SAME",
+          "new_after_crlf_to_lf": "7bcf43c67673ddca843d4e8a4607d4753d1512885d46fbc6682c5bcf3a51f082"
+        }
+      },
+      "log_sha256": "b632f1e28cdbaecac8609d878c007a0eb8a32f7fe53f6d42c4f86680f3144294",
+      "compared_against": "m2_family_extended_2026-11-22.txt",
+      "notes": [
+        "only known, explained difference: the committed log was written before m2_box_tools.py gained the ray-2 / end-box tools (CHANGELOG, endpoint-gap entry); the certificate it writes is byte-identical (sha256 7bcf43c6...)"
+      ]
+    },
+    {
+      "job": "M2 extended second check",
+      "argv": [
+        "python",
+        "-I",
+        "scripts/verify_m2_extended_fractions.py",
+        "data/m2_extended_certificate.json",
+        "--out",
+        "..\\..\\new_logs\\verify_m2_extended_fractions_2026-11-22.txt"
+      ],
+      "status": "MATCH",
+      "committed_log": "verify_m2_extended_fractions_2026-11-22.txt",
+      "seconds": 7.8,
+      "exit": 0,
+      "log_sha256": "4da77075ebdafba2ddb7aac5909a067503e7aca46302a131f0549ce564ac76ff",
+      "compared_against": "regression_verify_m2_extended_new_boxtools_2026-11-22.txt"
+    },
+    {
+      "job": "M2 endpoint gaps",
+      "argv": [
+        "python",
+        "-I",
+        "scripts/m2_endpoint_gaps.py",
+        "--out",
+        "..\\..\\new_logs\\m2_endpoint_gaps_2026-11-22.txt",
+        "--json",
+        "..\\..\\regenerated_data\\m2_gap_certificate.json"
+      ],
+      "status": "MATCH",
+      "committed_log": "m2_endpoint_gaps_2026-11-22.txt",
+      "seconds": 4.9,
+      "exit": 0,
+      "data": {
+        "m2_gap_certificate.json": {
+          "new": "08edb5afd789ae3b34fa137c46aa7942afc0d74ebd0769f0a6b458f89608f41b",
+          "committed": "08edb5afd789ae3b34fa137c46aa7942afc0d74ebd0769f0a6b458f89608f41b",
+          "result": "SAME",
+          "new_after_crlf_to_lf": "08edb5afd789ae3b34fa137c46aa7942afc0d74ebd0769f0a6b458f89608f41b"
+        }
+      },
+      "log_sha256": "b2199df049a3543fa314f3e76236a16f0ea59506213a845d80edf66689ff48a5",
+      "compared_against": "m2_endpoint_gaps_2026-11-22.txt"
+    },
+    {
+      "job": "M2 endpoint gaps second check",
+      "argv": [
+        "python",
+        "-I",
+        "scripts/verify_m2_gaps_fractions.py",
+        "data/m2_gap_certificate.json",
+        "--out",
+        "..\\..\\new_logs\\verify_m2_gaps_fractions_2026-11-22.txt"
+      ],
+      "status": "MATCH",
+      "committed_log": "verify_m2_gaps_fractions_2026-11-22.txt",
+      "seconds": 5.5,
+      "exit": 0,
+      "log_sha256": "19ee024b82af8dbd57266489f814ff1b2d6433e9649207bac70e331b157eb36b",
+      "compared_against": "verify_m2_gaps_fractions_2026-11-22.txt"
+    },
+    {
+      "job": "M2 dispersion export",
+      "argv": [
+        "python",
+        "-I",
+        "scripts/m2_dispersion_export.py",
+        "--out",
+        "..\\..\\new_logs\\m2_dispersion_export_2026-11-22.txt",
+        "--json",
+        "..\\..\\regenerated_data\\m2_dispersion.json"
+      ],
+      "status": "MATCH",
+      "committed_log": "m2_dispersion_export_2026-11-22.txt",
+      "seconds": 5.7,
+      "exit": 0,
+      "data": {
+        "m2_dispersion.json": {
+          "new": "baed27fde993d25c72e042211629cf51e2b17222df19e7193f2d3d2bd3fbfe7a",
+          "committed": "baed27fde993d25c72e042211629cf51e2b17222df19e7193f2d3d2bd3fbfe7a",
+          "result": "SAME",
+          "new_after_crlf_to_lf": "baed27fde993d25c72e042211629cf51e2b17222df19e7193f2d3d2bd3fbfe7a"
+        }
+      },
+      "log_sha256": "061ce4b4ef866e0fc183992586e4f384588ccd9b14729f8870b6671e18c289c2",
+      "compared_against": "m2_dispersion_export_2026-11-22.txt"
+    },
+    {
+      "job": "M2 dispersion fractions proof (long)",
+      "argv": [
+        "python",
+        "-I",
+        "scripts/verify_m2_dispersion_fractions.py",
+        "data/m2_dispersion.json",
+        "--out",
+        "..\\..\\new_logs\\verify_m2_dispersion_fractions_2026-11-22.txt"
+      ],
+      "status": "MATCH",
+      "committed_log": "verify_m2_dispersion_fractions_2026-11-22.txt",
+      "seconds": 78.6,
+      "exit": 0,
+      "log_sha256": "a0a47531b70767b6e7ec31a6d9fbb5c8f413d9770d3bd6972f60a62f414edcef",
+      "compared_against": "verify_m2_dispersion_fractions_2026-11-22.txt"
+    },
+    {
+      "job": "M2 curved symbol (general)",
+      "argv": [
+        "python",
+        "-I",
+        "scripts/m2_curved_symbol_general.py",
+        "--out",
+        "..\\..\\new_logs\\m2_curved_symbol_general_2026-11-22.txt"
+      ],
+      "status": "MATCH",
+      "committed_log": "m2_curved_symbol_general_2026-11-22.txt",
+      "seconds": 5.7,
+      "exit": 0,
+      "log_sha256": "bd2c1e04dd4c2d1eae63d777c40b2469837e4a5693fbab8d253f2a2f2f14d7c4",
+      "compared_against": "m2_curved_symbol_general_2026-11-22.txt"
+    },
+    {
+      "job": "audit: coercivity constants",
+      "argv": [
+        "python",
+        "-I",
+        "audit/coercivity_constants.py",
+        "--out",
+        "..\\..\\new_logs\\audit_coercivity_constants_2026-11-22.txt"
+      ],
+      "status": "MATCH",
+      "committed_log": "audit_coercivity_constants_2026-11-22.txt",
+      "seconds": 2.5,
+      "exit": 0,
+      "log_sha256": "c03405d07646f392c5865a1cd6ad17368f266a37224792c10e1d336f0261c8ae",
+      "compared_against": "audit_coercivity_constants_2026-11-22.txt"
+    },
+    {
+      "job": "audit: endpoint multiplicity",
+      "argv": [
+        "python",
+        "-I",
+        "audit/endpoint_multiplicity.py",
+        "--out",
+        "..\\..\\new_logs\\audit_endpoint_multiplicity_2026-11-22.txt"
+      ],
+      "status": "MATCH",
+      "committed_log": "audit_endpoint_multiplicity_2026-11-22.txt",
+      "seconds": 0.5,
+      "exit": 0,
+      "log_sha256": "7d022d9db605456fa7d0234335608c0ccd2f89a8f0b3b653e0b24171048feb4a",
+      "compared_against": "audit_endpoint_multiplicity_2026-11-22.txt"
+    },
+    {
+      "job": "audit: Jordan classification",
+      "argv": [
+        "python",
+        "-I",
+        "audit/jordan_classification.py",
+        "--out",
+        "..\\..\\new_logs\\audit_jordan_classification_2026-11-22.txt"
+      ],
+      "status": "MATCH",
+      "committed_log": "audit_jordan_classification_2026-11-22.txt",
+      "seconds": 0.5,
+      "exit": 0,
+      "log_sha256": "a4c440718a7685645bfcefa9a50f016d96d3abcced97de6e46d0176410d26665",
+      "compared_against": "audit_jordan_classification_2026-11-22.txt"
+    },
+    {
+      "job": "audit: restricted symbol (fractions)",
+      "argv": [
+        "python",
+        "-I",
+        "audit/restricted_symbol_fractions.py",
+        "--out",
+        "..\\..\\new_logs\\audit_restricted_symbol_fractions_2026-11-22.txt"
+      ],
+      "status": "MATCH",
+      "committed_log": "audit_restricted_symbol_fractions_2026-11-22.txt",
+      "seconds": 45.0,
+      "exit": 0,
+      "log_sha256": "ccc4ec0dbde9bd876089601c7b6c98108690326e198677ad231eb55c0dbd6658",
+      "compared_against": "audit_restricted_symbol_fractions_2026-11-22.txt"
+    }
+  ],
+  "overall": "ALL MATCH"
+}

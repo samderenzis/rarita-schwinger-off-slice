@@ -1,0 +1,24 @@
+Independent fractions-only verification of the Milestone 2 certificate (no SymPy)
+python 3.13.18 | input m2_minor.json sha256 faa705683310ca2f9d86885e8072b6ddab332f14ebb79b07bae5a19edfdfbd69
+script sha256 dff71899ff256efcced35ce7b8139fa9905345bb899fc20de0d2848c2a04f0d9
+   OK   recorded degrees (a, b) = (32, 32) <= (32, 32): True
+   OK   S_mu - (16/3) i S_q == 0 (S^rho = S_rat + (eta/35736) S_q exactly): True
+1. Polynomial identity on a 33 x 33 grid
+   OK   computed minor == recorded d(a, b) at all 1089 grid points (so identical as polynomials): True
+2. Taylor-box inequalities
+   OK   eps0 = 1/1000: bound < |d(0,0)| (ratio 0.000337); d(0,0) real: True
+   OK      hb^2 >= eps0^2 * 2450894: True
+   OK      crossing polynomial has no root on the box sides tau = 1/10 +- 1/20000 for |eta| <= hb: True
+   OK   eps0 = 1/100: bound < |d(0,0)| (ratio 0.003410); d(0,0) real: True
+   OK      hb^2 >= eps0^2 * 2450894: True
+   OK      crossing polynomial has no root on the box sides tau = 1/10 +- 1/2000 for |eta| <= hb: True
+   OK   eps0 = 1/10: bound < |d(0,0)| (ratio 0.038045); d(0,0) real: True
+   OK      hb^2 >= eps0^2 * 2450894: True
+   OK      crossing polynomial has no root on the box sides tau = 1/10 +- 1/200 for |eta| <= hb: True
+   OK   eps0 = 1/2: bound < |d(0,0)| (ratio 0.244469); d(0,0) real: True
+   OK      hb^2 >= eps0^2 * 2450894: True
+   OK      crossing polynomial has no root on the box sides tau = 1/10 +- 1/50 for |eta| <= hb: True
+   OK   eps0 = 1: bound < |d(0,0)| (ratio 0.898967); d(0,0) real: True
+   OK      hb^2 >= eps0^2 * 2450894: True
+   OK      crossing polynomial has no root on the box sides tau = 1/10 +- 1/20 for |eta| <= hb: True
+FRACTIONS VERIFICATION OF MILESTONE 2 CERTIFICATE: ALL PASS

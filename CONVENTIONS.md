@@ -1,11 +1,11 @@
 # Conventions
 
-These are the conventions and known traps carried over from the parent repository, [rarita-schwinger-well-posedness](https://github.com/samderenzis/rarita-schwinger-well-posedness), release v1.0.9. File and line references below are to that release.
+These are the conventions and known traps carried over from the parent repository, [rarita-schwinger-well-posedness](https://github.com/samderenzis/rarita-schwinger-well-posedness), release v1.0.11. File and line references below are to that release. (Earlier versions of this file cited v1.0.9. The three files referred to, `scripts/bhmap_defs.py`, `scripts/witness_min.py` and `bhmap_validate_v1_7.py`, are byte-identical in v1.0.9 and v1.0.11 (same SHA-256), and the quoted lines were re-checked in v1.0.11 on 2026-11-22.)
 
 ## Signs and names
 - **The matrix M.**
   - In the paper, M is Γ^{0ak}.
-  - In the parent code, the variable `Mmat` is the **negative** of the paper's M. The paper's M is `MMmat = -Mmat`: see [`scripts/bhmap_defs.py`](https://github.com/samderenzis/rarita-schwinger-well-posedness/blob/v1.0.9/scripts/bhmap_defs.py), line 54, and the validator, line 120, both commented "MM^{ak} = Gamma^{0ak}".
+  - In the parent code, the variable `Mmat` is the **negative** of the paper's M. The paper's M is `MMmat = -Mmat`: see [`scripts/bhmap_defs.py`](https://github.com/samderenzis/rarita-schwinger-well-posedness/blob/v1.0.11/scripts/bhmap_defs.py), line 54, and the validator, line 120, both commented "MM^{ak} = Gamma^{0ak}".
   - Any formula copied between the paper and code here must account for this sign.
 - **Parameters.** These are the names used in the parent code:
 
@@ -20,8 +20,8 @@ These are the conventions and known traps carried over from the parent repositor
   | r | eigenvalue (characteristic speed) |
 
 ## The Pauli slice is hard-wired in the parent code
-- [`scripts/witness_min.py`](https://github.com/samderenzis/rarita-schwinger-well-posedness/blob/v1.0.9/scripts/witness_min.py), line 12, sets `q = lam*sqrt(2/3)*kap*m`.
-- [`scripts/bhmap_defs.py`](https://github.com/samderenzis/rarita-schwinger-well-posedness/blob/v1.0.9/scripts/bhmap_defs.py), line 33, sets `q = lam*sqrt(2/3)*m`, commented "Pauli slice".
+- [`scripts/witness_min.py`](https://github.com/samderenzis/rarita-schwinger-well-posedness/blob/v1.0.11/scripts/witness_min.py), line 12, sets `q = lam*sqrt(2/3)*kap*m`.
+- [`scripts/bhmap_defs.py`](https://github.com/samderenzis/rarita-schwinger-well-posedness/blob/v1.0.11/scripts/bhmap_defs.py), line 33, sets `q = lam*sqrt(2/3)*m`, commented "Pauli slice".
 - **The factor `kap` does not leave the slice.** In witness_min.py, `kap` scales λ in both q and the Pauli term (line 16), so q = λ√(2/3)·m still holds.
 - Code in this repository must take **q as an independent parameter**. Before such code is used off the slice, it must reproduce the parent's golden outputs exactly when q is set back to λ√(2/3)·m.
 

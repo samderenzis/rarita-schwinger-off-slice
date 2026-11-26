@@ -1,0 +1,13 @@
+PLAN step 5 -- curved-symbol identification at point A (q symbolic through eta)
+date (UTC): 2026-11-22 19:38:38
+python 3.13.18 | sympy 1.14.0
+command: python3 -I scripts/step5_curved_symbol.py --point A
+   76cdd39e6b7ef4cb71390e6b0303e6e008b55f0f206a1c39de3e3bd2ca2310aa  scripts/rs_model.py
+   1b78d24305758c2a020bfaed35b032643a485ff961d91bf3e1b811ae2399dc2b  scripts/points.py
+   5c89abd0e3ae68839ec3894aebfccc3273e48364a46209c53b9c315ed609ecf2  scripts/step5_curved_symbol.py
+   k = E(y0)^-T XI = ('42108589454171386/227779105414740649', '186294557517875126/2050011948732665841', '501338840/477262093', '1371952277/477262093')
+   OK   no Float atoms: True
+   OK   degree in Lam <= 1: True
+   OK   principal symbol of curved K' at y0 == i P(XI), for every q (eta symbolic): True
+   (17.2 s)
+CURVED-SYMBOL IDENTIFICATION AT POINT A: PASS

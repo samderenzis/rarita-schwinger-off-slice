@@ -1,12 +1,12 @@
 # rarita-schwinger-off-slice
 
-![Status](https://img.shields.io/badge/status-planning_·_no_results_yet-lightgrey?style=flat-square)
+![Status](https://img.shields.io/badge/status-one--parameter_family_result_·_AI--checked_only-yellow?style=flat-square)
 ![Scope](https://img.shields.io/badge/scope-exploratory-orange?style=flat-square)
 
 > **This repository is exploratory. Nothing in it is part of the published theorem, and nothing here is established until it is stated as a result, with its evidence and its review status.**
 
 ## What this is
-This is a follow-up to [rarita-schwinger-well-posedness](https://github.com/samderenzis/rarita-schwinger-well-posedness), the release [v1.0.9](https://github.com/samderenzis/rarita-schwinger-well-posedness/releases/tag/v1.0.9) and [paper version 2](https://github.com/samderenzis/rarita-schwinger-well-posedness/blob/main/paper/main.pdf).
+This is a follow-up to [rarita-schwinger-well-posedness](https://github.com/samderenzis/rarita-schwinger-well-posedness), the release [v1.0.11](https://github.com/samderenzis/rarita-schwinger-well-posedness/releases/tag/v1.0.11) and [paper version 2](https://github.com/samderenzis/rarita-schwinger-well-posedness/blob/main/paper/main.pdf).
 
 That paper proves a local obstruction to loss-free L² well-posedness for a charged, Pauli-coupled massive Rarita–Schwinger field. The proof is at one exact parameter point on the **Pauli slice**, where the charge is q = λ√(2/3)·m.
 
@@ -17,7 +17,15 @@ This repository asks the next question in that project's [ROADMAP](https://githu
 The working plan is in [PLAN.md](PLAN.md). Before any work, read [CONVENTIONS.md](CONVENTIONS.md), which covers sign conventions and the traps inherited from the parent code. Outcomes are reported with [RESULT_TEMPLATE.md](RESULT_TEMPLATE.md). Terms are explained in [GLOSSARY.md](GLOSSARY.md).
 
 ## Status
-Planning. No computations have been run here yet.
+**Four pointwise POSITIVE results (not yet released, AI-checked only).** Off the Pauli slice the parent crossing splits into two crossings. At four exact points, taking both crossings with the charge 0.03% or 0.17% above or below the slice, there is an exact Jordan chain inside the constraint kernel, and the four hypotheses of the parent argument were re-checked at each: [results/RESULT_offslice_points_2026-11-22.md](results/RESULT_offslice_points_2026-11-22.md). These are pointwise witnesses.
+
+**Milestone 2, one direction (not yet released, AI-checked only):** for **every** charge q = (1 + ε)·q_slice with 0 < |ε| ≤ 1, keeping the parent's m, λ, b, both split crossings have a Jordan chain in the constraint kernel. The other hypotheses were re-checked for all such q. The proof is an exact box certificate, checked in two arithmetic engines: [results/RESULT_m2_q_direction_2026-11-22.md](results/RESULT_m2_q_direction_2026-11-22.md). This is a one-parameter family, not an open set in parameter space. **Extended:** the certificate now covers the lower crossing for 0 < |ε| ≤ 2.66 and the upper for 0 < |ε| ≤ 6.28, which is almost their whole existence range: [results/RESULT_m2_extended_2026-11-22.md](results/RESULT_m2_extended_2026-11-22.md). **Closed (development audit):** the remaining gaps are now certified up to and including the exact thresholds ε_L ≈ 2.6674 and ε_U ≈ 6.2912, and at every such crossing the Jordan form is exactly one J₂ plus three J₁: [audit/JORDAN_STRUCTURE_COMPLETE.md](audit/JORDAN_STRUCTURE_COMPLETE.md), [audit/EPSILON_ENDPOINT_CLOSURE.md](audit/EPSILON_ENDPOINT_CLOSURE.md). How the point was found: [notes/STEP4_EXPLORATION.md](notes/STEP4_EXPLORATION.md).
+
+**Triple crossings (certified externally, pointwise):** at the four real triple crossings (ε ≈ ±10.133, ±10.397), the constrained symbol has a Jordan block of size 3 (exact type J₃ ⊕ 3J₁). This was certified by the separate GEN43 engine, which is not part of this repository. Its certificate files are included, but nothing in this repository re-derives them: [results/RESULT_triple_crossings_GEN43_2026-11-23.md](results/RESULT_triple_crossings_GEN43_2026-11-23.md).
+
+**Owner reproduction (2026-11-25):** every script with a committed log was re-run on the owner's own computer (Windows 11, Python 3.14.7) and reproduced its committed output. The result was ALL MATCH; regenerated JSON differs only in Windows line endings. This shows the code is reproducible, not that the mathematics is correct: [results/OWNER_REPRODUCTION_2026-11-25.md](results/OWNER_REPRODUCTION_2026-11-25.md).
+
+Earlier steps: PLAN steps 1 and 2 done. Step 1: the parent's symbol code now takes q as an independent parameter, and on the slice it reproduces the parent's golden outputs exactly ([log](results/step1_slice_regression_2026-11-22.txt)). Step 2: the reduction identities hold with q free, and at the witness m, λ, b the elimination matrix S⁰ stays invertible for |ε| < 8.82, where q = (1 + ε)·λ√(2/3)·m ([log](results/step2_reduction_q_free_2026-11-22.txt)).
 
 ## Ground rules (carried over from the parent project)
 - **Exact arithmetic for anything called a result.** High-precision numerics are used only to decide where exact work is worth doing.
@@ -30,7 +38,7 @@ Planning. No computations have been run here yet.
 ## Layout
 | Folder | What goes there |
 |---|---|
-| [`scripts/`](scripts/) | computation scripts, with q as an independent parameter |
+| [`scripts/`](scripts/) | computation scripts, with q as an independent parameter (see [scripts/README.md](scripts/README.md)) |
 | [`data/`](data/) | exact witnesses and certificates, if any are found |
 | [`results/`](results/) | reference outputs, and the logs of runs |
 | [`notes/`](notes/) | working notes, and failed attempts |
