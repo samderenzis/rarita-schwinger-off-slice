@@ -1,6 +1,15 @@
 # Changelog
 
 ## Unreleased
+- **Glossary expanded** (documentation only). New entries:
+  - the ε parametrisation and the rays;
+  - the light eigenvalue, the split and triple crossings, and ε_L and ε_U;
+  - det S⁰ and π′;
+  - algebraic and geometric multiplicity, and the Jordan type notation;
+  - box certificates and the second engine;
+  - the evidence labels and the owner-reproduction terms.
+
+  No result changed.
 - **Triple crossings: Jordan type J₃ ⊕ 3J₁, certified externally** (`results/RESULT_triple_crossings_GEN43_2026-11-23.md`, `data/gen43_r10_2_1_triple_crossings/`). At the four real triple crossings (v = ε² ≈ 102.677 and 108.096, both signs of η; π′ = 1/2) the GEN43 engine r10.2.1 certifies algebraic multiplicity 6 and exact Jordan type J₃ ⊕ 3J₁ on ker L. Details:
   - the proof uses exact rank bounds in a degree-80 number field;
   - det S⁰ ≠ 0 at each point, by intervals;
