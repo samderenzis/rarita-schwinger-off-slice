@@ -22,6 +22,12 @@ Nothing is deleted.
 - **Happened:** it silently produced floating-point values (denominators 2⁵⁷), so the "is a square" tests never passed and the search reported zero candidates. Found by checking the denominators; replaced by exact substitution, which found point A. The fixed search is part D/E of `scripts/step4_dispersion_and_crossings.py`.
 - **Does not rule out:** nothing; this was a code error, kept here as a record.
 
+## F-8 (2026-11-25) Owner reproduction: first runner reported false differences (bug in the runner, fixed)
+- **Tried:** the first version (1.0) of the reproduction runner compared each regenerated data file with the committed one byte for byte (SHA-256). The run was on the owner's Windows 11 machine with Python 3.14.7.
+- **Happened:** 5 jobs were reported DIFFER. They were `step5_point_exact.py` for A, A−, B and B−, and `m2_family_q_direction.py`, which are exactly the scripts that write indented JSON in text mode. On Windows those files get CRLF line endings, so their bytes and SHA-256 change while the content does not. The 3 scripts that write single-line JSON matched byte for byte. The second-engine checks of the committed data all matched. Step 1 was NOT RUN in that attempt because the parent repository was not given.
+- **Fix:** runner 1.1 compares the JSON after converting CRLF to LF. It reports such a job as MATCH-EOL, maps the hash printed in the log only when the converted file equals the committed one, and still reports any real content change as DIFFER. Before use it was tested by converting files to CRLF (MATCH-EOL) and by CRLF plus one changed character (DIFFER). The re-run with 1.1 and the parent repository gave ALL MATCH (`results/OWNER_REPRODUCTION_2026-11-25.md`). No script, result or data file was changed.
+- **Does not rule out:** nothing about the mathematics. It records that the JSON outputs are not byte-portable across operating systems (CONVENTIONS.md, "JSON line endings").
+
 ## F-7 (2026-11-22) Second check of the gap certificate: wrong zero test (bug in the checker, fixed)
 - **Tried:** the first version of `scripts/verify_m2_gaps_fractions.py` tested "one nonzero entry per row of K' outside block 2" by counting non-empty coefficient lists.
 - **Happened:** SymPy records a zero polynomial as a single zero term, so every entry counted as nonzero and the check FAILED although K' was correct. Found by printing the stored entries.

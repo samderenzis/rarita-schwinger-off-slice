@@ -1,6 +1,7 @@
 # Changelog
 
 ## Unreleased
+- **notes/FAILED_ATTEMPTS.md: F-8 added** (documentation only). The first reproduction runner (1.0) reported 5 false DIFFERs because Windows writes CRLF line endings in the indented JSON. It was fixed in runner 1.1, after which the re-run gave ALL MATCH. No result changed.
 - **Triple-crossing report rewritten in the RESULT_TEMPLATE format** (`results/RESULT_triple_crossings_GEN43_2026-11-23.md`; documentation only). It adds the template's required hypothesis section:
   - det S⁰ ≠ 0 is certified externally at each point (relevant because det S⁰ vanishes at ε ≈ 10.118);
   - the reduction identities, coercivity (Theorem T) and the curved-symbol identification are covered by this repository's general statements for every q, but not re-checked at these points.
