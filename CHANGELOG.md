@@ -1,6 +1,12 @@
 # Changelog
 
 ## Unreleased
+- **README revised** (documentation only).
+  - Status now opens with a short summary: established, certified externally, reproduced, not shown.
+  - The detail paragraphs are in chronological order.
+  - New sections: "What is still open" and "How to check it".
+  - Ground rules now name `SHA256SUMS.txt`; the layout table adds `audit/` and describes `data/`.
+  - No result statement changed.
 - **Documentation: glossary expanded and conventions updated.** No script, result or data file changed.
   - **GLOSSARY.md: new entries.**
     - the ε parametrisation and the rays;
