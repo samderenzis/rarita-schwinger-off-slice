@@ -36,7 +36,7 @@ These are the conventions and known traps carried over from the parent repositor
   - whether it was cross-checked in a second engine.
 
 ## Files and records
-- Released files are listed in `SHA256SUMS` (format: `hash  path`, sorted).
+- Files are listed in `SHA256SUMS.txt` (format: `hash  path`, sorted). The file does not list itself. Its paths start with `rarita-schwinger-off-slice/`, so check it from the folder that **contains** the repository: `sha256sum -c rarita-schwinger-off-slice/SHA256SUMS.txt`. (Earlier versions of this file called it `SHA256SUMS`.)
 - Runs are logged in `results/` with:
   - the date;
   - the Python and package versions;
@@ -51,3 +51,18 @@ These are the conventions and known traps carried over from the parent repositor
 - "Family", "open set" and "persists" are used only with a proof that supports them.
 - Agreement between this project's own scripts is code consistency, not independent confirmation.
 - Principal-symbol characteristic speeds are not signal speeds.
+
+## Off-slice parametrisation
+- q = (1 + ε)·q_slice with q_slice = λ√(2/3)·m. Unless a file says otherwise, m, λ, b₁ and b₂ keep the parent witness values. The scripts also use η = 35736·(q − q_slice), so η² = 2450894·ε².
+- Crossings are tracked along **ray 1**, ξ = (s, 0, 1, 0), and **ray 2**, ξ′ = (1, 0, t, 0). The other terms (light eigenvalue, split and triple crossings, ε_L, ε_U) are defined in [GLOSSARY.md](GLOSSARY.md).
+
+## Running the scripts
+- Run every script from the repository root with `python3 -I`. Use SymPy 1.14.0 and mpmath 1.3.0, the versions the logs were made with. The `verify_*_fractions.py` scripts need only the Python standard library.
+- **Logs record script hashes.** Every log in `results/` records the SHA-256 of the script that produced it, and of helper scripts it imports. Changing a script, even only its formatting, makes its committed logs out of date. A script change must therefore come with regenerated logs and a CHANGELOG entry. Until then, the old logs stay as they are and the difference is noted.
+- **JSON line endings.** The scripts that write indented JSON (`step5_point_exact.py`, `m2_family_q_direction.py`) open their output in text mode. On Windows the output gets CRLF line endings, so it is byte-different from the committed LF files although the content is identical. Compare after converting CRLF to LF. `results/owner_reproduction_2026-11-25/offslice_rerun.py` does this. The scripts were left unchanged for the reason in the previous point.
+- **The `m2_family_extended` log predates the current `m2_box_tools.py`.** The log records an earlier hash of the helper. The certificate it writes is byte-identical with the current helper (`results/OWNER_REPRODUCTION_2026-11-25.md`).
+
+## Results certified outside this repository
+- A result certified by an engine that is not in this repository is labelled **CERTIFIED EXTERNALLY**. Its certificate files are included unchanged, together with their recorded SHA-256 values and the provenance of the run (engine release and hash, who ran it and when, and how the files were checked).
+- Such a result is never described as re-derivable from this repository. It is not combined with the repository's own results into a stronger claim. It carries the engine's shared-input caveats, for example a common transcription of the defining equations.
+- Current case: the triple-crossing Jordan type, `results/RESULT_triple_crossings_GEN43_2026-11-23.md`.
