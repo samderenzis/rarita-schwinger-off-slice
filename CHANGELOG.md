@@ -1,6 +1,7 @@
 # Changelog
 
 ## Unreleased
+- **CITATION.cff and PLAN.md aligned** (documentation only). The CITATION abstract no longer says "No results yet" and summarises the AI-checked results. The PLAN progress heading shows its latest update date. No result changed.
 - **notes/FAILED_ATTEMPTS.md: entries put in order** (F-1 to F-8; documentation only). Entries were moved as whole blocks, with no wording changed. The header now says new entries go at the end.
 - **notes/FAILED_ATTEMPTS.md: F-8 added** (documentation only). The first reproduction runner (1.0) reported 5 false DIFFERs because Windows writes CRLF line endings in the indented JSON. It was fixed in runner 1.1, after which the re-run gave ALL MATCH. No result changed.
 - **Triple-crossing report rewritten in the RESULT_TEMPLATE format** (`results/RESULT_triple_crossings_GEN43_2026-11-23.md`; documentation only). It adds the template's required hypothesis section:

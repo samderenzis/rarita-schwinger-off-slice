@@ -24,7 +24,7 @@ This plan follows the parent project's [ROADMAP §2](https://github.com/samderen
   This would be a second pointwise witness, not a family theorem.
 - **Milestone 2:** a parametrised argument showing where such chains exist, and where the hypotheses hold (with uniformity, if a common ball is wanted). Only this would support a family-level statement.
 
-## Progress (2026-11-22; not yet released; AI-checked only)
+## Progress (updated 2026-11-25; not yet released; AI-checked only)
 - Steps 1–5 done. **Milestone 1 reached**, pointwise at four exact points: `results/RESULT_offslice_points_2026-11-22.md`.
 - **Milestone 2 reached in one direction only:** for every 0 < |ε| ≤ 1 (q varies; m, λ, b₁, b₂ fixed at the witness values), both crossings carry a Jordan chain on ker L, and the hypotheses hold at each ε: `results/RESULT_m2_q_direction_2026-11-22.md`. Extended to the lower crossing for 0 < |ε| ≤ 2.66 and the upper for 0 < |ε| ≤ 6.28, almost their whole existence ranges (ε_L ≈ 2.6674, ε_U ≈ 6.2912): `results/RESULT_m2_extended_2026-11-22.md`. The gaps are now closed up to and including ε_L and ε_U, and the Jordan form is exactly J₂ ⊕ 3J₁ there (`audit/JORDAN_STRUCTURE_COMPLETE.md`, `audit/EPSILON_ENDPOINT_CLOSURE.md`).
 - Beyond the family (2026-11-25): at the four real triple crossings (ε ≈ ±10.133, ±10.397), the Jordan type is J₃ ⊕ 3J₁, certified externally by the GEN43 engine: `results/RESULT_triple_crossings_GEN43_2026-11-23.md`. The owner re-ran every script in this repository on his own machine: ALL MATCH (`results/OWNER_REPRODUCTION_2026-11-25.md`).

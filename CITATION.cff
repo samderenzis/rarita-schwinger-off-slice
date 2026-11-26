@@ -16,7 +16,7 @@ keywords:
   - well-posedness
   - Jordan block
   - exact arithmetic
-abstract: "Exploratory follow-up to rarita-schwinger-well-posedness (release v1.0.11, paper version 2): does the constrained Jordan-block obstruction persist off the Pauli slice (charge varied independently) near the published witness? No results yet. AI-collaborative; not peer reviewed."
+abstract: "Exploratory follow-up to rarita-schwinger-well-posedness (release v1.0.11, paper version 2): does the constrained Jordan-block obstruction persist off the Pauli slice (charge varied independently) near the published witness? Results so far (AI-checked only, unreleased): exact constrained Jordan chains at four off-slice points; Jordan type exactly J2 + 3J1 at both split crossings for every charge on their full existence ranges, other parameters fixed; J3 + 3J1 at four triple crossings, certified by an external engine. Not an open-set result. AI-collaborative; not peer reviewed."
 references:
   - type: software
     title: "rarita-schwinger-well-posedness"
