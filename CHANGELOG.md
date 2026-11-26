@@ -1,6 +1,11 @@
 # Changelog
 
 ## Unreleased
+- **Triple-crossing report rewritten in the RESULT_TEMPLATE format** (`results/RESULT_triple_crossings_GEN43_2026-11-23.md`; documentation only). It adds the template's required hypothesis section:
+  - det S⁰ ≠ 0 is certified externally at each point (relevant because det S⁰ vanishes at ε ≈ 10.118);
+  - the reduction identities, coercivity (Theorem T) and the curved-symbol identification are covered by this repository's general statements for every q, but not re-checked at these points.
+
+  It also adds the conditional consequence via Theorem T, stated as conditional and not as a result. The certified statement is unchanged.
 - **README revised** (documentation only).
   - Status now opens with a short summary: established, certified externally, reproduced, not shown.
   - The detail paragraphs are in chronological order.
