@@ -37,6 +37,15 @@ The working plan is in [PLAN.md](PLAN.md). Before any work, read [CONVENTIONS.md
 
 **Owner reproduction (2026-11-25):** every script with a committed log was re-run on the owner's own computer (Windows 11, Python 3.14.7) and reproduced its committed output. The result was ALL MATCH; regenerated JSON differs only in Windows line endings. This shows the code is reproducible, not that the mathematics is correct: [results/OWNER_REPRODUCTION_2026-11-25.md](results/OWNER_REPRODUCTION_2026-11-25.md).
 
+## Follow-up: independent certificates (2026-11-27)
+The state of this repository on 2026-11-25 is frozen as tag [`frozen-2026-11-25`](https://github.com/samderenzis/rarita-schwinger-off-slice/tree/frozen-2026-11-25). Its exact zip, `rarita-schwinger-off-slice_github_2026-11-25_2230.zip` (SHA-256 `5d92969c8755c3d799910d561379c193b53b114c5a069790ac4f2c265ba362d4`), is attached to release [B6.6.1](https://github.com/samderenzis/rarita-schwinger-off-slice-certificates/releases/tag/B6.6.1) of [rarita-schwinger-off-slice-certificates](https://github.com/samderenzis/rarita-schwinger-off-slice-certificates). That repository checks the zip by hash and builds on it. Since the snapshot, only this section, CHANGELOG.md and SHA256SUMS.txt have changed here.
+
+The certificates repository re-derives several results here in a separate exact-arithmetic verifier, and adds new ones. It is AI-reviewed (ChatGPT, Perplexity) and **not human-verified**.
+- **Re-derived, agreeing:** det S⁰ at the witness; the thresholds ε_L and ε_U (exact certificate); J₂ ⊕ 3J₁ at three split crossings inside those ranges (exact certificates, agreeing with Theorem J at those points); the location of the triple crossings. The J₃ ⊕ 3J₁ type at the triple crossings is **not** re-checked there; it still rests on the GEN43 certificate alone.
+- **New:** light-cone crossings also exist between the two zeros of det S⁰ (8.823 < |ε| < 10.118) and beyond 10.118, a range not covered by [audit/JORDAN_STRUCTURE_COMPLETE.md](audit/JORDAN_STRUCTURE_COMPLETE.md). All 20 sampled there show J₂ ⊕ 3J₁ numerically, and the one at ε ≈ 9.958 is certified exactly. These points lie outside C₀, the region around the slice bounded by det S⁰ = 0, where the characteristic roots can be non-real (certified at two points).
+- **New:** near the slice, all characteristic roots are real on certified boxes covering about 97.5 % of C₀ for 0.10 ≤ √6·λ·m ≤ 0.17. Real roots give weak hyperbolicity only.
+- **Still not shown:** an open set in (m, λ, b, q), uniformity in ε, which part of well-posedness fails, physics, and human review.
+
 ## What is still open
 Tracked in [PLAN.md](PLAN.md):
 - **Varying m, λ, b₁, b₂.** At present every family result holds along one line in parameter space (q varies). Whether the obstruction persists on an open set needs its own proof.
