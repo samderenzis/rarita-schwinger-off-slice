@@ -23,6 +23,6 @@ references:
     authors:
       - family-names: "DeRenzis"
         given-names: "Sam"
-    doi: "10.5281/zenodo.24413648"
+    doi: "10.5281/zenodo.24446736"
     repository-code: "https://github.com/samderenzis/rarita-schwinger-well-posedness"
     version: "1.0.11"
